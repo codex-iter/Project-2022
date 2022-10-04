@@ -1,0 +1,29 @@
+<resources>
+    <string name="app_name">Scientific Calculator</string>
+    <string name="welcome_to_calculator">WELCOME TO CALCULATOR</string>
+    <string name="basic_calculator">BASIC CALCULATOR</string>
+    <string name="scientific">SCIENTIFIC</string>
+    <string name="unit_converter">UNIT CONVERTER</string>
+    <string name="perform_basic_calculations">Perform Basic Calculations</string>
+    <string name="enter_1st_number">Enter 1st number</string>
+    <string name="enter_2nd_number">Enter 2nd number</string>
+    <string name="add">ADD</string>
+    <string name="sub">SUB</string>
+    <string name="mul">MUL</string>
+    <string name="div">DIV</string>
+    <string name="perform_scientific_calculations">Perform Scientific Calculations</string>
+    <string name="enter_the_number">Enter the number</string>
+    <string name="cos">cos</string>
+    <string name="sin">sin</string>
+    <string name="tan">tan</string>
+    <string name="log">log</string>
+    <string name="x">x!</string>
+    <string name="switc">SWITCH</string>
+    <string name="enter_power_2nd_number">Enter power/ 2nd number</string>
+    <string name="perform_scientific_calculation">Perform Scientific Calculations</string>
+    <string name="enter_the_numbe">Enter the number</string>
+    <string name="enter_power_2nd_numbe">Enter power/ 2nd number</string>
+    <string name="sinh">sinh</string>
+    <string name="cosh">cosh</string>
+    <string name="tanh">tanh</string>
+</resources>
