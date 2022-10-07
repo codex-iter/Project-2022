@@ -8,6 +8,7 @@ Ping Pong game with Play with Computer Feature
 3. Can change ball speed ( 'B' Key)
 4. Ability to restart at any time
 5. Also has a simulation mode where both players are CPUs ('Space' Key)
+6. Has 3 Difficulty levels against CPU
 
 ----CONTROLS----
 
