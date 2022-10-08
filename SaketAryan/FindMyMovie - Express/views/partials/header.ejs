@@ -1,0 +1,70 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+     <!-- font awesome icon cdn -->
+     <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.2.0/css/all.min.css">
+
+     <!-- bootstrap cdn -->
+    <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.1.3/dist/css/bootstrap.min.css" rel="stylesheet" integrity="sha384-1BmE4kWBq78iYhFldvKuhfTAU6auU8tT94WrHftjDbrCEXSU1oBoqyl2QvZ6jIW3" crossorigin="anonymous">  
+
+    <!-- w3 schools cdn -->
+    <link rel="stylesheet" href="https://www.w3schools.com/w3css/4/w3.css">
+
+    <!-- Personal stylesheet -->
+    <link rel="stylesheet" href="/css/styles.css">
+
+    <!-- jquery cdn -->
+    <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.6.0/jquery.min.js"></script>
+
+    <!-- icon image of website -->
+    <link rel="icon" type="image/x-icon" href="/images/site-logo.png">
+    <title>Find My Movie</title>
+</head>
+<body>
+    <nav class="navbar navbar-light bg-light">
+        <div class="container-fluid">
+
+            <!-- Navbar logo and text -->
+            <a class="navbar-brand" href="/">
+                <img src="/images/site-logo.png" alt="" width="30" height="24" class="d-inline-block align-text-top">
+                FindMyMovie
+            </a>
+
+             <!-- Search bar  -->
+             <form class="d-flex" action="/search" method="post">
+                <input class="form-control me-2" name="search" type="text" placeholder="Search" aria-label="Search" required autocomplete="off">
+                <button class="btn btn-outline-dark" type="submit" >Search</button>
+            </form>
+
+            
+            <button class="navbar-toggler" type="button" data-bs-toggle="collapse" data-bs-target="#navbarNav" aria-controls="navbarNav" aria-expanded="false" aria-label="Toggle navigation">
+                <span class="navbar-toggler-icon"></span>
+            </button>
+
+            <!-- Navbar list items -->
+            <div class="collapse navbar-collapse" id="navbarNav">
+                <ul class="navbar-nav">
+                  <li class="nav-item">
+                    <a class="nav-link active" aria-current="page" href="/">Home</a>
+                  </li>
+                  <li class="nav-item">
+                    <a class="nav-link" href="/movie/upcoming-movies">Upcoming Movies</a>
+                  </li>
+                  <li class="nav-item">
+                    <a class="nav-link" href="/movie/top-movies">Top Movies</a>
+                  </li>
+                  <li class="nav-item">
+                    <a class="nav-link" href="/tv/top-tv-show">Top TV Shows</a>
+                  </li>
+                  <li class="nav-item">
+                    <a class="nav-link" href="/about">About Us</a>
+                  </li>
+                </ul>
+              </div>
+
+             
+        </div>
+      </nav>

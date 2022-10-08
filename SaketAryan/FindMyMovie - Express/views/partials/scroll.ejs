@@ -1,0 +1,58 @@
+<div class="movie">
+<div id="carouselExampleControls" class="carousel slide" data-bs-ride="carousel">
+  <div class="carousel-inner">
+    <div class="carousel-item active">
+        <% for(let k=0; k< 16; k++) { %>
+            <a href='/<%=type[3] %>/details/<%=array[3][k].id %>'>
+            <img src="<%= array[3][k].posterURL %>" class="carousel-im" alt="...">
+            </a>
+        <% } %>
+    </div>
+    <div class="carousel-item">
+      <% for(let k=0; k< 16; k++) { %>
+        <a href='/<%=type[4] %>/details/<%=array[4][k].id %>'>
+            <img src="<%= array[4][k].posterURL %>" class="carousel-im" alt="...">
+            </a>
+      <% } %>
+    </div>
+    <div class="carousel-item">
+        <% for(let k=0; k< 16; k++) { %>
+            <a href='/<%=type[5] %>/details/<%=array[5][k].id %>'>
+                <img src="<%= array[5][k].posterURL %>" class="carousel-im" alt="...">
+            </a>
+        <% } %>
+    </div>
+  </div>
+  <button class="carousel-control-prev" type="button" data-bs-target="#carouselExampleControls" data-bs-slide="prev">
+    <span class="carousel-control-prev-icon" aria-hidden="true"></span>
+    <span class="visually-hidden">Previous</span>
+  </button>
+  <button class="carousel-control-next" type="button" data-bs-target="#carouselExampleControls" data-bs-slide="next">
+    <span class="carousel-control-next-icon" aria-hidden="true"></span>
+    <span class="visually-hidden">Next</span>
+  </button>
+</div>
+    
+    
+    <% for(let k=0; k< 4; k++) { %>
+    <h2><%= nameArray[k] %></h2>
+    <br>
+    <div class="cast-scroll">
+    <div class="movie-suggestion">
+    <% for(let i=0; i < array[k].length; i++){ %>
+    <div class="movie-suggestion-item" onclick="location.href='/<%=type[k] %>/details/<%=array[k][i].id %>' " style="cursor:pointer;">
+    <img class="movie-poster" src="<%=array[k][i].posterURL %>" onerror="this.onerror=null; this.src='/images/default.png'">
+    <h3><%=array[k][i].title%> </h3>
+    </div>
+     <% } %>
+
+    </div>
+    </div>
+    <br>
+
+    <% if(k%2==1) { %>
+        <br>
+    <% } %>
+
+    <% } %>
+</div>
