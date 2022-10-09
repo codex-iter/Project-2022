@@ -1,0 +1,24 @@
+Online Class Automation
+
+A python script that automatically joins a zoom meeting based on your timetable.
+
+How to use?...
+
+1. Save this Folder in your desktop.
+2. Open App Folder and Install VC_redist.x86 from the folder.
+3. Now Update you time, Meeting ID, Passkey in meetingschedule.csv and save it.
+4. Update your Path in path.txt 
+    - To get path right click on ZOOM click on "Open File Location".
+    - Copy Path from above and past it in "path.txt file".
+5. Run Automation.exe and cross-check for details.
+6. After that Click on "Run Automation" to run the program.
+7. The process will start.
+8. Minimize the Screen and Terminal.
+
+Prerequisites...
+
+1. Zoom app must be installed in your system.
+2. You must be logged in to your Zoom account and maximize the window.
+3. Install Visual C++ Redistributable form net or file attached with it.
+4. Meeting time for the day along with Meeting ID and passcode must be entered manually into the "meetingschedule.csv".
+
