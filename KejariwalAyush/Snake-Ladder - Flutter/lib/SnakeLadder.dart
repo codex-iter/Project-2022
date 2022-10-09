@@ -257,11 +257,11 @@ class _SnakeLadderState extends State<SnakeLadder> {
             title: new Text('Are you sure?'),
             content: new Text('Do you want to exit the App'),
             actions: <Widget>[
-              new FlatButton(
+              new MaterialButton(
                 onPressed: () => Navigator.of(context).pop(false),
                 child: new Text('No'),
               ),
-              new FlatButton(
+              new MaterialButton(
                 onPressed: () => exit(0),
                 child: new Text('Yes'),
               ),
@@ -304,7 +304,7 @@ class _SnakeLadderState extends State<SnakeLadder> {
                           content: new Text(
                               "Player 2 WON !!!\nDo you want to Restart ?"),
                           actions: <Widget>[
-                            FlatButton(
+                            MaterialButton(
                               child: Text('Yes'),
                               onPressed: () {
                                 setState(() {
@@ -320,7 +320,7 @@ class _SnakeLadderState extends State<SnakeLadder> {
                                 // );
                               },
                             ),
-                            FlatButton(
+                            MaterialButton(
                               child: Text('No'),
                               onPressed: () {
                                 Navigator.of(context).pop();
@@ -360,7 +360,7 @@ class _SnakeLadderState extends State<SnakeLadder> {
                                 content: new Text(
                                     "Computer WON !!!\nDo you want to Restart ?"),
                                 actions: <Widget>[
-                                  FlatButton(
+                                  MaterialButton(
                                     child: Text('Yes'),
                                     onPressed: () {
                                       setState(() {
@@ -370,7 +370,7 @@ class _SnakeLadderState extends State<SnakeLadder> {
                                       Navigator.of(context).pop();
                                     },
                                   ),
-                                  FlatButton(
+                                  MaterialButton(
                                     child: Text('No'),
                                     onPressed: () {
                                       Navigator.of(context).pop();
@@ -450,7 +450,7 @@ class _SnakeLadderState extends State<SnakeLadder> {
                           content: new Text(
                               "Player 1 WON !!!\nDo you want to Restart ?"),
                           actions: <Widget>[
-                            FlatButton(
+                            MaterialButton(
                               child: Text('Yes'),
                               onPressed: () {
                                 setState(() {
@@ -460,7 +460,7 @@ class _SnakeLadderState extends State<SnakeLadder> {
                                 Navigator.of(context).pop();
                               },
                             ),
-                            FlatButton(
+                            MaterialButton(
                               child: Text('No'),
                               onPressed: () {
                                 Navigator.of(context).pop();
@@ -522,7 +522,7 @@ class _SnakeLadderState extends State<SnakeLadder> {
                             ? "Would you like to change Player1 to mannual"
                             : "Would you like to convert Player 1 to Computer"),
                         actions: <Widget>[
-                          FlatButton(
+                          MaterialButton(
                             child: Text('Yes'),
                             onPressed: () {
                               setState(() {
@@ -533,7 +533,7 @@ class _SnakeLadderState extends State<SnakeLadder> {
                               Navigator.of(context).pop();
                             },
                           ),
-                          FlatButton(
+                          MaterialButton(
                             child: Text('No'),
                             onPressed: () {
                               Navigator.of(context).pop();
@@ -554,7 +554,7 @@ class _SnakeLadderState extends State<SnakeLadder> {
                         title: new Text("Snakes & Ladders"),
                         content: new Text("Would you like Restart ?"),
                         actions: <Widget>[
-                          FlatButton(
+                          MaterialButton(
                             child: Text('Change Board'),
                             onPressed: () {
                               setState(() {
@@ -568,7 +568,7 @@ class _SnakeLadderState extends State<SnakeLadder> {
                               Navigator.of(context).pop();
                             },
                           ),
-                          FlatButton(
+                          MaterialButton(
                             child: Text('Yes'),
                             onPressed: () {
                               setState(() {
@@ -578,7 +578,7 @@ class _SnakeLadderState extends State<SnakeLadder> {
                               Navigator.of(context).pop();
                             },
                           ),
-                          FlatButton(
+                          MaterialButton(
                             child: Text('No'),
                             onPressed: () {
                               Navigator.of(context).pop();
