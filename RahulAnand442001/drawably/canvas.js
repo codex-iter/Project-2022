@@ -42,7 +42,8 @@ window.addEventListener("load", () => {
   undoButton.onclick = handleUndo;
   function handleUndo() {
     if (index <= 0) {
-      clear_canvas();
+      handleClearCanvas();
+      return null;
     }
     index -= 1;
     drawHistory.pop();
