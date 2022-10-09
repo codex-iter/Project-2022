@@ -1,16 +1,19 @@
-# user_expenses
+# Expenses Tracker
+This app keeps track of your expenses
 
-A new Flutter project.
+## Features
+```
+* Uses Material v3 monet engine for dynamic wallpaper based color 🎨 palette (For Android 12)
 
-## Getting Started
+* Auto dark 🌙 mode
+```
 
-This project is a starting point for a Flutter application.
 
-A few resources to get you started if this is your first Flutter project:
+## Screenshots
+<img src = "screenshots/screenshot.jpg" height = 500>
 
-- [Lab: Write your first Flutter app](https://docs.flutter.dev/get-started/codelab)
-- [Cookbook: Useful Flutter samples](https://docs.flutter.dev/cookbook)
-
-For help getting started with Flutter development, view the
-[online documentation](https://docs.flutter.dev/), which offers tutorials,
-samples, guidance on mobile development, and a full API reference.
+## Installation
+* Make sure install <a href="https://flutter.dev" flutter>flutter sdk</a> first.
+* run `flutter doctor` in terminal/cmd
+* clone the repo and run `flutter pub get` to install all dependencies.
+* run `main.dart` for any platform and 🚀
