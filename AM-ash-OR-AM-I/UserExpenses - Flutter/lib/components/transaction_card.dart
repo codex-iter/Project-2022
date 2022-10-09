@@ -64,7 +64,11 @@ class TransactionCard extends StatelessWidget {
                       ),
                     ),
                     Text(
-                      transaction.dateTime.toString(),
+                      transaction.date,
+                      style: Theme.of(context).textTheme.caption,
+                    ),
+                    Text(
+                      transaction.time,
                       style: Theme.of(context).textTheme.caption,
                     ),
                   ],

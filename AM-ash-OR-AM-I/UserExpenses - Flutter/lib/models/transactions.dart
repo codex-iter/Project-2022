@@ -1,4 +1,5 @@
 import 'package:flutter/material.dart';
+import 'package:intl/intl.dart';
 
 class TransactionsModel with ChangeNotifier {
   List<Transaction> transactions = [];
@@ -11,11 +12,15 @@ class TransactionsModel with ChangeNotifier {
   }
 
   void addTransaction(String title, double amount) {
+    
+    String dateStr = DateFormat.yMMMd().format(DateTime.now()).toString();
+    String time = DateFormat.jm().format(DateTime.now()).toString();
     transactions.add(
       Transaction(
         title: title,
         amount: amount,
-        dateTime: DateTime.now(),
+        date: dateStr,
+        time: time,
       ),
     );
     notifyListeners();
@@ -25,10 +30,12 @@ class TransactionsModel with ChangeNotifier {
 class Transaction {
   final String title;
   final double amount;
-  final DateTime dateTime;
+  final String date;
+  final String time;
   Transaction({
     required this.title,
     required this.amount,
-    required this.dateTime,
+    required this.date,
+    required this.time,
   });
 }

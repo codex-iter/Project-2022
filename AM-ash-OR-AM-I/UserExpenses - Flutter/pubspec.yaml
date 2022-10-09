@@ -39,6 +39,7 @@ dependencies:
   dynamic_color: ^1.5.4
   provider: ^6.0.3
   google_fonts: ^3.0.1
+  intl: ^0.17.0
 
 dev_dependencies:
   flutter_test:
