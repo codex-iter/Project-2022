@@ -12,7 +12,6 @@ class TransactionsModel with ChangeNotifier {
   }
 
   void addTransaction(String title, double amount) {
-    
     String dateStr = DateFormat.yMMMd().format(DateTime.now()).toString();
     String time = DateFormat.jm().format(DateTime.now()).toString();
     transactions.add(
