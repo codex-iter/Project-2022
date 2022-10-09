@@ -7,28 +7,28 @@
 
 <div align="center" style="text-align: center">
     <h6>Home Page</h6>
-    <img src="/screenshots/1.png" width="600px"</img> 
+    <img src="screenshots/1.png" width="600px"</img> 
 </div>
 
 <br>
 
 <div align="center" style="text-align: center">
     <h6>Movies/Web-Series Info Page</h6>
-    <img src="/screenshots/2.png" width="600px"</img> 
+    <img src="screenshots/2.png" width="600px"</img> 
 </div>
 
 <br>
 
 <div align="center" style="text-align: center">
     <h6>Seasons Info Section</h6>
-    <img src="/screenshots/3.png" width="600px"</img> 
+    <img src="screenshots/3.png" width="600px"</img> 
 </div>
 
 <br>
 
 <div align="center" style="text-align: center">
     <h6>Search Results</h6>
-    <img src="/screenshots/4.png" width="600px"</img> 
+    <img src="screenshots/4.png" width="600px"</img> 
 </div>
 
 # Features
