@@ -26,7 +26,7 @@ class CardToolbar extends StatelessWidget {
               ]),
           child: const Align(
             child: Text(
-              "Expenses",
+              "Expense Tracker",
               style: TextStyle(
                 fontSize: 18,
                 letterSpacing: 1.5,

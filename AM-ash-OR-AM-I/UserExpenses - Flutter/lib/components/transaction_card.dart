@@ -1,4 +1,5 @@
 import 'package:flutter/material.dart';
+import 'package:provider/provider.dart';
 import 'package:user_expenses/models/transactions.dart';
 
 class TransactionCard extends StatelessWidget {
@@ -28,33 +29,46 @@ class TransactionCard extends StatelessWidget {
                   ),
                   borderRadius: BorderRadius.circular(20),
                 ),
-                child: Text(
-                  transaction.amount.toString(),
-                  style: TextStyle(
-                    color: Theme.of(context).colorScheme.primary,
-                    fontSize: 18,
-                    fontWeight: FontWeight.bold,
-                  ),
+                child: Row(
+                  children: [
+                    Icon(
+                      context.select<TransactionsModel, IconData>(
+                        (model) => model.currency,
+                      ),
+                      size: 20,
+                      color: Theme.of(context).colorScheme.primary,
+                    ),
+                    Text(
+                      transaction.amount.toString(),
+                      style: TextStyle(
+                        color: Theme.of(context).colorScheme.primary,
+                        fontSize: 18,
+                        fontWeight: FontWeight.bold,
+                      ),
+                    ),
+                  ],
                 ),
               ),
               const SizedBox(
                 width: 20,
               ),
-              Column(
-                crossAxisAlignment: CrossAxisAlignment.start,
-                children: [
-                  Text(
-                    transaction.title,
-                    style: const TextStyle(
-                      fontWeight: FontWeight.bold,
-                      fontSize: 16,
+              Expanded(
+                child: Column(
+                  crossAxisAlignment: CrossAxisAlignment.start,
+                  children: [
+                    Text(
+                      transaction.title,
+                      style: const TextStyle(
+                        fontWeight: FontWeight.bold,
+                        fontSize: 16,
+                      ),
                     ),
-                  ),
-                  Text(
-                    transaction.dateTime.toString(),
-                    style: Theme.of(context).textTheme.caption,
-                  ),
-                ],
+                    Text(
+                      transaction.dateTime.toString(),
+                      style: Theme.of(context).textTheme.caption,
+                    ),
+                  ],
+                ),
               )
             ],
           ),
