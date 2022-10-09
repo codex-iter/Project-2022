@@ -1,50 +1,58 @@
 import 'package:flutter/material.dart';
 import 'package:provider/provider.dart';
+import 'package:user_expenses/components/heading_toolbar.dart';
 
-import '../components/card_toolbar.dart';
 import '../components/transaction_card.dart';
 import '../models/transactions.dart';
 
-class MyHomePage extends StatefulWidget {
+class MyHomePage extends StatelessWidget {
   const MyHomePage({super.key, required this.title});
 
   final String title;
 
   @override
-  State<MyHomePage> createState() => _MyHomePageState();
-}
-
-class _MyHomePageState extends State<MyHomePage> {
-  @override
   Widget build(BuildContext context) {
     return ChangeNotifierProvider(
       create: (context) => TransactionsModel(),
-      child: SafeArea(
+      child: GestureDetector(
+        onTap: () {
+          FocusScopeNode currentFocus = FocusScope.of(context);
+          if (!currentFocus.hasPrimaryFocus) {
+            currentFocus.unfocus();
+          }
+        },
         child: Scaffold(
-          body: Padding(
-            padding: const EdgeInsets.only(top: 20, left: 15, right: 15),
-            child: Center(
-              child: ConstrainedBox(
-                constraints: const BoxConstraints(maxWidth: 500),
-                child: Column(
-                  children: <Widget>[
-                    const CardToolbar(),
-                    const MyForm(),
-                    Consumer<TransactionsModel>(
-                      builder: (context, model, child) => Expanded(
-                        child: ListView.builder(
-                          itemCount: model.transactions.length,
-                          itemBuilder: (context, index) => TransactionCard(
-                              model.transactions[
-                                  model.transactions.length - index - 1]),
-                        ),
-                      ),
-                    )
-                  ],
+          body: SafeArea(
+            child: Padding(
+              padding: const EdgeInsets.only(top: 20, left: 15, right: 15),
+              child: Center(
+                child: ConstrainedBox(
+                  constraints: const BoxConstraints(maxWidth: 500),
+                  child: Column(
+                    children: <Widget>[
+                      const HeadingToolbar(),
+                      const MyForm(),
+                      buildTransactions(),
+                    ],
+                  ),
                 ),
               ),
             ),
           ),
+        ),
+      ),
+    );
+  }
+
+  Consumer<TransactionsModel> buildTransactions() {
+    return Consumer<TransactionsModel>(
+      builder: (_, model, __) => Expanded(
+        child: ListView(
+          children: [
+            ...model.transactions
+                .map((Transaction transaction) => TransactionCard(transaction))
+                .toList()
+          ],
         ),
       ),
     );
@@ -72,7 +80,7 @@ class _MyFormState extends State<MyForm> {
   @override
   Widget build(BuildContext context) {
     return Padding(
-      padding: const EdgeInsets.symmetric(vertical: 30),
+      padding: const EdgeInsets.symmetric(vertical: 20),
       child: Form(
         key: _formKey,
         child: Column(

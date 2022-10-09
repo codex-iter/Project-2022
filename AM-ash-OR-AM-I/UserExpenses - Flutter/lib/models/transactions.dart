@@ -4,6 +4,7 @@ import 'package:intl/intl.dart';
 class TransactionsModel with ChangeNotifier {
   List<Transaction> transactions = [];
   IconData _currency = Icons.attach_money_rounded;
+  double _total = 0;
 
   IconData get currency => _currency;
   set currency(IconData currency) {
@@ -11,9 +12,17 @@ class TransactionsModel with ChangeNotifier {
     notifyListeners();
   }
 
+  double get total => _total;
+
+  set total(double total) {
+    _total = total;
+    notifyListeners();
+  }
+
   void addTransaction(String title, double amount) {
     String dateStr = DateFormat.yMMMd().format(DateTime.now()).toString();
     String time = DateFormat.jm().format(DateTime.now()).toString();
+    total += amount;
     transactions.add(
       Transaction(
         title: title,
