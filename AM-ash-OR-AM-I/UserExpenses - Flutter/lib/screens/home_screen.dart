@@ -32,7 +32,7 @@ class MyHomePage extends StatelessWidget {
                     children: <Widget>[
                       const HeadingToolbar(),
                       const MyForm(),
-                      buildTransactions(),
+                      buildTransactions(context),
                     ],
                   ),
                 ),
@@ -44,17 +44,38 @@ class MyHomePage extends StatelessWidget {
     );
   }
 
-  Consumer<TransactionsModel> buildTransactions() {
+  Consumer<TransactionsModel> buildTransactions(BuildContext context) {
     return Consumer<TransactionsModel>(
-      builder: (_, model, __) => Expanded(
-        child: ListView(
-          children: [
-            ...model.transactions
-                .map((Transaction transaction) => TransactionCard(transaction))
-                .toList()
-          ],
-        ),
-      ),
+      builder: (_, model, __) {
+        if (model.transactions.isNotEmpty) {
+          return Expanded(
+            child: ListView(
+              children: [
+                ...model.transactions
+                    .map((Transaction transaction) =>
+                        TransactionCard(transaction))
+                    .toList()
+              ],
+            ),
+          );
+        } else {
+          return Expanded(
+            child: Center(
+              child: Text(
+                "Feels Lonely :(",
+                style: TextStyle(
+                  fontSize: 20,
+                  fontWeight: FontWeight.bold,
+                  color: Theme.of(context)
+                      .colorScheme
+                      .onBackground
+                      .withOpacity(.7),
+                ),
+              ),
+            ),
+          );
+        }
+      },
     );
   }
 }

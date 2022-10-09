@@ -7,7 +7,7 @@ import 'package:user_expenses/screens/home_screen.dart';
 import 'package:dynamic_color/dynamic_color.dart';
 
 var brightness = SchedulerBinding.instance.window.platformBrightness;
-bool isDarkMode = false; //brightness == Brightness.dark;
+bool isDarkMode = brightness == Brightness.dark;
 void main() {
   SystemChrome.setSystemUIOverlayStyle(
     const SystemUiOverlayStyle(
