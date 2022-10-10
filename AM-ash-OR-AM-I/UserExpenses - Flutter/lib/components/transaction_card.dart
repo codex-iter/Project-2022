@@ -63,13 +63,21 @@ class TransactionCard extends StatelessWidget {
                         fontSize: 16,
                       ),
                     ),
-                    Text(
-                      transaction.date,
-                      style: Theme.of(context).textTheme.caption,
-                    ),
-                    Text(
-                      transaction.time,
-                      style: Theme.of(context).textTheme.caption,
+                    const SizedBox(height: 5),
+                    Row(
+                      children: [
+                        Text(
+                          transaction.date,
+                          style: Theme.of(context).textTheme.caption,
+                        ),
+                        const SizedBox(
+                          width: 10,
+                        ),
+                        Text(
+                          transaction.time,
+                          style: Theme.of(context).textTheme.caption,
+                        ),
+                      ],
                     ),
                   ],
                 ),
