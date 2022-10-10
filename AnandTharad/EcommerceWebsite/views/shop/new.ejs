@@ -1,0 +1,55 @@
+<% layout('layouts/boilerplate') %>
+    <div class="row">
+        <h1 class="text-center">New product</h1>
+        <div class="col-6 offset-3">
+            <form action="/products" method="post" novalidate class="needs-validation" >
+                <div class="mb-3">
+                    <label class="form-label" for="title">Title</label>
+                    <input class="form-control" type="text" id="title" name="product[title]" required>
+                    <div class="valid-feedback">
+                        looks good!
+                    </div>
+                </div>
+                <div class="mb-3">
+                    <label for="formFileMultiple" class="form-label">Images</label>
+                    <input class="form-control" name="images[]" type="file" id="formFileMultiple" >
+                  </div>
+                 
+                <!-- multiple for multiple file inputs -->
+                <!-- <div class="mb-3">
+                    <label class="form-label" for="Image">Image Url</label>
+                    <input class="form-control" type="text" id="Image" name="product[image]" required>
+                    <div class="valid-feedback">
+                        looks good!
+                    </div>
+                </div> -->
+
+                <div class="mb-3">
+                    <label for="price" class="form-label">Price</label>
+                    <div class="input-group">
+                        <span class="input-group-text" id="price-label">$</span>
+                        <input type="text" id="price" class="form-control" placeholder="0.00" aria-label="Username"
+                            aria-describedby="price-label" name="product[price]" required>
+                            <div class="valid-feedback">
+                                looks good!
+                            </div>
+                    </div>
+                </div>
+                <div class="mb-3">
+                    <label class="form-label" for="description">Description</label>
+                    <textarea class="form-control" type="text" id="description" name="product[description]"
+                        required></textarea>
+                        <div class="valid-feedback">
+                            looks good!
+                        </div>
+                    </div>
+
+                <div class="mb-3">
+                    <button class="btn btn-success">Submit</button>
+                </div>
+            </form>
+            <a href="/products">Cancel Creation? back to all grounds</a>
+
+        </div>
+    </div>
+
