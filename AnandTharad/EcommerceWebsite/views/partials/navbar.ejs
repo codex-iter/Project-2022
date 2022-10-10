@@ -1,0 +1,141 @@
+<nav class="navbar navbar-expand-lg bg-dark navbar-dark">
+  <div class="container-fluid justify-content-around">
+    <a class="navbar-brand" href="/landingpage">Navbar</a>
+    <button class="navbar-toggler" type="button" data-bs-toggle="collapse" data-bs-target="#navbarNavDropdown"
+      aria-controls="navbarNavDropdown" aria-expanded="false" aria-label="Toggle navigation">
+      <span class="navbar-toggler-icon"></span>
+    </button>
+
+    
+
+    <ul class="navbar-nav">
+      <% if(!currentUser) {%>
+        <a class="nav-link" href="/login">Login</a>
+        <a class="nav-link" href="/register">Register</a>
+        <% } else {%>
+        <a class="nav-link" href="/logout">Logout</a>
+        <% } %>
+    </ul>
+  </div>
+</nav>
+<nav class="navbar navbar-expand-lg bg-dark navbar-dark">
+  <div class="container-fluid justify-content-end">
+    <div class="collapse navbar-collapse " id="navbarNavDropdown">
+      <ul class="navbar-nav container-fluid justify-content-evenly">
+        
+        <li class="nav-item dropdown ">
+          <a class="nav-link dropdown-toggle" role="button" data-bs-toggle="dropdown" aria-expanded="false">
+            Home
+          </a>
+          <ul class="dropdown-menu dropdown-center">
+            <table class="table table-condensed table-borderless">
+              <tr>
+                <td><a class="dropdown-item" href="/products?category=decor">Decor</a></td>
+              </tr>
+              <tr>
+                
+                <td><a class="dropdown-item" href="/products?category=incenseholder">Incense Holder</a></td>
+              </tr>
+              <tr>
+                <td><a class="dropdown-item" href="/products?category=painting">Wall Accent</a></td>
+              </tr>
+            </table>
+          </ul>
+        </li>
+        <li class="nav-item dropdown">
+          <a class="nav-link dropdown-toggle" role="button" data-bs-toggle="dropdown" aria-expanded="false">
+            Fashion
+          </a>
+          <ul class="dropdown-menu">
+            <table class="table table-condensed table-borderless">
+              <tr>
+                <td><a class="dropdown-item" href="/products?category=men">Men</a></td>
+                <td><a class="dropdown-item" href="/products?category=women">Women</a></td>
+              </tr>
+              <tr>
+                <td><a class="dropdown-item" href="/products?category=kurta">Kurta</a></td>
+                <td><a class="dropdown-item" href="/products?category=kurti">Kurti</a></td>
+              </tr>
+              <tr>
+                <td><a class="dropdown-item" href="/products?category=waistcoat">Wasitcoat</a></td>
+                <td><a class="dropdown-item" href="/products?category=saree">Saree</a></td>
+              </tr>
+              <tr>
+                <td><a class="dropdown-item" href="#"></a></td>
+                <td><a class="dropdown-item" href="/products?category=bag">Bag</a></td>
+              </tr>
+              <tr>
+                <td><a class="dropdown-item" href="#"></a></td>
+                <td><a class="dropdown-item" href="/products?category=dhupatta">Dhupatta</a></td>
+              </tr>
+            </table>
+          </ul>
+        </li>
+        <li class="nav-item dropdown">
+          <a class="nav-link dropdown-toggle" role="button" data-bs-toggle="dropdown" aria-expanded="false">
+            Kitchen
+          </a>
+          <ul class="dropdown-menu">
+            <table class="table table-condensed table-borderless">
+              <tr>
+                <td><a class="dropdown-item" href="/products?category=cookware">Cookware</a></td>
+              </tr>
+              <tr>
+                <td><a class="dropdown-item" href="/products?category=utensil">Utensils</a></td>
+              </tr>
+            </table>
+          </ul>
+        </li>
+        <li class="nav-item dropdown">
+          <a class="nav-link dropdown-toggle" role="button" data-bs-toggle="dropdown" aria-expanded="false">
+           Office
+          </a>
+          <ul class="dropdown-menu">
+            <table class="table table-condensed table-borderless">
+              <tr>
+                <td><a class="dropdown-item" href="/products?category=bookstand">Book Stand</a></td>
+              </tr>
+              <tr>
+                <td><a class="dropdown-item" href="/products?category=penstand">Pen Stand</a></td>
+              </tr>
+            </table>
+          </ul>
+        </li>
+        <li class="nav-item dropdown">
+          <a class="nav-link dropdown-toggle" role="button" data-bs-toggle="dropdown" aria-expanded="false">
+            Art and Craft
+          </a>
+          <ul class="dropdown-menu">
+            <table class="table table-condensed table-borderless">
+              <tr>
+                <td><a class="dropdown-item" href="/products?category=bead">Beads</a></td>
+              </tr>
+
+            </table>
+          </ul>
+        </li>
+        <li class="nav-item dropdown dropdown-menu-end dropdown-menu-lg-start">
+          <a class="nav-link dropdown-toggle dropdown-menu-end dropdown-menu-lg-start" role="button"
+            data-bs-toggle="dropdown" aria-expanded="false">
+            kids
+          </a>
+          <ul class="dropdown-menu dropdown-menu-lg-end">
+            <table class="table table-condensed table-borderless">
+              <tr>
+                <td><a class="dropdown-item" href="/products?category=game">Games</a></td>
+
+              </tr>
+
+            </table>
+          </ul>
+        </li>
+        <li class="navbar-nav">
+          <a href="/products/new" class="nav-link">New Product</a>
+        </li>
+
+      </ul>
+
+
+    </div>
+  </div>
+</nav>
