@@ -1,0 +1,16 @@
+
+<div class="box">
+    <div class="movie cast w3-animate-opacity">
+    <h1>Cast & Credits</h1>
+    <div class ="cast-scroll">
+        <div class="cast-suggestion">
+        <% for(let i=0; i < myMovie.cast.length; i++){ %>
+        <div class="cast-suggestion-item">
+        <img class="movie-poster " src="<%=myMovie.cast[i].profile_pic %>" onerror="this.onerror=null; this.src='/images/default.png'">
+        <h3><%=myMovie.cast[i].name%> </h3>
+        <p><%=myMovie.cast[i].characters %></p>
+        </div>
+         <% } %>
+    </div>
+    </div>
+</div>

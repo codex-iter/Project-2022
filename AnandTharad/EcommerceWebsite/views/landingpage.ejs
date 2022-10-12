@@ -1,0 +1,41 @@
+<%- layout("layouts/boilerplate") %>
+
+
+    <div>
+        
+    </div>
+
+    <div class="d-flex justify-content-between">
+        <h3>Highest Rated Products</h1>
+            <a href="/products?filter=highestrated" class="btn btn-secondary">View All</a>
+    </div>
+    <div class="card-group">
+
+        <% product.sort((a,b)=> a.avgrating-b.avgrating) %>
+            <% for(let i=product.length-1; i>=product.length-5;i--){ %>
+                <% p=product[i] %>
+
+                    <div class="col">
+                        <div class="card h-100">
+                            <img src="<%= p.images[0].url.replace("/upload", "/upload/w_300,h_300" ) %>"
+                            class="img-fluid rounded-start img-thumbnail" alt="...">
+                            <div class="card-body">
+                                <h5 class="card-title">
+                                    <%= p.title %>
+                                </h5>
+                                <p class="card-text">Price: $<%= p.price %>
+                                </p>
+                                <p class="card-text text-muted">Rating: ⭐<%= p.avgrating.toString().slice(0,3) %>
+                                </p>
+                                <p>
+                                    <% for(let category of p.category){ %>
+                                        <a href="/products?category=<%= category %>"
+                                            class="btn btn-outline-primary btn-sm">#<%= category.toUpperCase() %> </a>
+                                        <% } %>
+                                </p>
+                            </div>
+                            <a href="/products/<%= p._id %>" class="btn btn-primary">View</a>
+                        </div>
+                    </div>
+                    <% } %>
+    </div>

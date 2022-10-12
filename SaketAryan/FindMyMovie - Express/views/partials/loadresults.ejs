@@ -1,0 +1,18 @@
+<div class="box">
+    <% let k=0; %>
+    <% for(let i=0; i < trending.length; i++){ %>
+     <%   if(trending[i].ratings==0 || trending[i].ratings == 'NaN' || trending[i].overview == '') continue; %>
+        <div class="movie-item w3-animate-opacity" onclick="location.href='/<%= trending[i].mediaType %>/details/<%= trending[i].id %>' " style="cursor:pointer;">
+          <img class="movie-poster" src="<%= trending[i].posterURL %>" onerror="this.onerror=null; this.src='/images/default.png'">
+            <h3><%= trending[i].title %></h3>
+            <p><%= trending[i].overview %></p>
+            <h6>Ratings: <%= trending[i].ratings %></h6>
+        </div> 
+        <% k++ %>
+    <% } %>   
+    <% if(k==0) { %>
+      <div class="no-results w3-animate-opacity" >
+        <h3>Sorry, No Results Found....</h3>
+      </div>
+    <% } %>
+    </div>
