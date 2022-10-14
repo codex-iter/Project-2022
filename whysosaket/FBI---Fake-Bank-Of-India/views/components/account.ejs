@@ -1,0 +1,24 @@
+<div class="account-section">
+<div class="account">
+    <div class="account-left">
+    <img class="profile-pic" src="https://cdn.pixabay.com/photo/2015/10/05/22/37/blank-profile-picture-973460_1280.png">
+    </div>
+
+    <div class="account-right">
+        <h5>Name: <span class="info"><%= account.name %></span></h5>
+        <h5>Account Number: <span class="info"><%= account.account_no %></span></h5>
+        <h5>Balance: <span class="info" style="color: rgb(0, 147, 0);"><strong>$ <%= account.balance %> </strong></span></h5>
+        <h5>Branch: <span class="info"><%= account.branch %></span></h5>
+        <h5>IFSC: <span class="info"><%= account.ifsc %></span></h5>
+    </div>
+</div>
+
+<form>
+<input class="btn btn-success" type="button" value="Transfer Funds" onclick="location.href='/transfer/<%= account.account_no %>'" style="cursor:pointer;">
+<input class="btn btn-warning" type="button" value="Update Password" onclick="location.href='/updatepassword/<%= account.account_no %>'" style="cursor:pointer;">
+<input class="btn btn-danger" type="button" value="Delete Account" onclick="location.href='/delete/<%= account.account_no %>'" style="cursor:pointer;">
+</form>
+
+
+
+</div>

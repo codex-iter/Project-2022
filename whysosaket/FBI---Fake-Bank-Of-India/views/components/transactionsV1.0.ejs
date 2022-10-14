@@ -1,0 +1,57 @@
+<div class="transaction-section">
+
+    <!-- The below code is for the heading of the transactions page -->
+    <div class="header">
+    <div class="transaction" style="text-align: left;">
+        <div class="detail">
+            <h3>Account</h3>
+        </div>
+
+        <div class="detail">
+            <h3>Amount</h3>
+        </div>
+
+        <div class="detail">
+            <h3>Date</h3>
+        </div>
+
+        <div class="detail">
+            <h3>Transaction ID</h3>
+        </div>
+    </div>
+    </div>
+
+    <br>
+    <!-- the below code is for the transaction unit -->
+    <div class="transactions">
+        
+<% for(let i=0; i<transactions.length; i++) { %>
+    <div class="transaction <%= transactions[i].type %>">
+
+        <div class="detail info">
+            <h6><span class="data">Account: </span><%= transactions[i].account %></h6>
+        </div>
+
+        <div class="detail info">
+            <h6><span class="data">Amount: </span> $<%= transactions[i].amount %></h6>
+        </div>
+
+        <div class="detail info">
+            <h6><span class="data">Date: </span><%= transactions[i].date %></h6>
+        </div>
+
+        <div class="detail info">
+            <h6><span class="data">Transaction ID: </span><%= transactions[i].id %></h6>
+        </div>
+    </div>
+    
+
+    <% } %>
+
+    <% if(transactions.length === 0) { %>
+        <h3 style="color: rgb(229, 208, 208);">No Transactions</h3>
+    <% } else { %>
+    <h6 style="color: rgb(106, 106, 106); margin: 1rem">xx End of Transactions xx</h6>
+    <% } %>
+</div>
+</div>

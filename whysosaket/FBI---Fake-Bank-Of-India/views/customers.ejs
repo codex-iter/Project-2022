@@ -1,0 +1,30 @@
+<%- include('partials/header') -%>
+
+<%- include('partials/navbar') -%>
+<%- include('components/alerts') -%>
+
+<div class="customers-section">
+
+    
+
+    <div class="outer">
+        <div class="customer header">
+            <div class="cus-info"><h5>NAME</h5></div>
+            <div class="cus-info"><h5>ACCOUNT_NO</h5></div>
+            <div class="cus-info"><h5>BRANCH</h5></div>
+            <div class="cus-info"><h5>BALANCE</h5></div>
+        </div>
+
+        <% for(let i=0;i<accounts.length;i++){ %>
+    <div class="customer">
+        <div class="cus-info name" onclick="location.href='/account/<%= accounts[i].account_no %>'" style="cursor:pointer;"><h6><span class="data">NAME: </span><%= accounts[i].name %></h6></div>
+        <div class="cus-info"><h6><span class="data">ACC_NO: </span> <%= accounts[i].account_no %></h6></div>
+        <div class="cus-info" onclick="location.href='/account/<%= accounts[i].account_no %>'" style="cursor:pointer;"><h6><span class="data">BRANCH:</span><%= accounts[i].branch %></h6></div>
+        <div class="cus-info" onclick="location.href='/account/<%= accounts[i].account_no %>'" style="cursor:pointer;"><h6 style="color: rgb(25, 129, 1); font-weight: 700;"><span class="data">BALANCE:</span> $<%= accounts[i].balance %></h6></div>
+    </div>
+        <% } %>
+    </div> 
+</div>
+
+
+<%- include('partials/footer') -%>
