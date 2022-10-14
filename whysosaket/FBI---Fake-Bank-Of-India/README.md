@@ -10,28 +10,28 @@
 
 <div align="center" style="text-align: center">
     <h6>Home Page</h6>
-    <img src="/screenshots/1.png" width="600px"</img> 
+    <img src="screenshots/1.png" width="600px"</img> 
 </div>
 
 <br>
 
 <div align="center" style="text-align: center">
     <h6>All Customers List</h6>
-    <img src="/screenshots/2.png" width="600px"</img> 
+    <img src="screenshots/2.png" width="600px"</img> 
 </div>
 
 <br>
 
 <div align="center" style="text-align: center">
     <h6>Account Info</h6>
-    <img src="/screenshots/3.png" width="600px"</img> 
+    <img src="screenshots/3.png" width="600px"</img> 
 </div>
 
 <br>
 
 <div align="center" style="text-align: center">
     <h6>Status(Success) Page</h6>
-    <img src="/screenshots/4.png" width="600px"</img> 
+    <img src="screenshots/4.png" width="600px"</img> 
 </div>
 
 # Features
