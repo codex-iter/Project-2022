@@ -1,0 +1,52 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link rel="shortcut icon" href="/static/media/favicon.ico">
+    <title>Basic Banking System</title>
+    <!-- Compiled and minified CSS -->
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/materialize/1.0.0/css/materialize.min.css">
+    <link rel="stylesheet" href="/static/css/style.css">
+
+    <!-- Compiled and minified JavaScript -->
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/materialize/1.0.0/js/materialize.min.js"></script>
+
+    <!-- Fonts -->
+    <link href="https://fonts.googleapis.com/css2?family=Noto+Sans+JP:wght@500&display=swap" rel="stylesheet"> 
+    <link href="https://fonts.googleapis.com/css2?family=Sansita+Swashed:wght@700&display=swap" rel="stylesheet">
+    <link href="https://fonts.googleapis.com/css2?family=Roboto:wght@500&display=swap" rel="stylesheet">
+    <link href="https://fonts.googleapis.com/icon?family=Material+Icons" rel="stylesheet">
+
+    <!-- AOS  -->
+    <link rel="stylesheet" href="https://unpkg.com/aos@next/dist/aos.css"/>
+    <script src="https://code.jquery.com/jquery-3.2.1.slim.min.js"></script>
+
+    <script src="https://unpkg.com/aos@next/dist/aos.js" initgrity="ScArgMKY86FEXEJZc3mdgBr8gGDaKDJJo"></script>
+
+    <title>{% block title %}{% endblock title %}</title>
+</head>
+<body>
+    <nav class="bg-light">
+        <div class="nav-wrapper">
+          <a href="/" class="brand-logo navbar-brand">PsuedoBank</a>
+          <a href="#" data-target="mobile-demo" class="sidenav-trigger"><i class="material-icons">menu</i></a>
+          <ul id="nav-mobile" class="right hide-on-med-and-down">
+            <li><a href="/" class="nav-link">Home</a></li>
+            <li><a href="/dashboard" class="nav-link">Dashboard</a></li>
+            <li><a href="/logs" class="nav-link">Logs</a></li>
+          </ul>
+        </div>
+    </nav>
+
+    {% block main %}{% endblock %}
+
+    <script>
+      
+      document.addEventListener('DOMContentLoaded', function() {
+        var elems = document.querySelectorAll('.sidenav');
+        var instances = M.Sidenav.init(elems, options);
+      });
+    </script>
+</body>
+</html>

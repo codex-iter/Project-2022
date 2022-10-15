@@ -1,0 +1,51 @@
+{% extends "basic.html" %}
+
+{% block title %}Home{% endblock %}
+
+{% block main %}
+{% set balance = 0 %}
+<div class="container">
+  <div class="row">
+    <div class="col s1">
+      <span class="flow-text">
+        <u>DASHBOARD</u>
+      </span>
+    </div>
+    <div class="col s4 offset-s7">
+      <span class="flow-text">
+        Balance: {{ users | sum(attribute='balance') }}
+      </span>
+    </div>
+
+  </div>
+  <table class="responsive-table highlight">
+    <thead>
+      <tr>
+        <th>ID</th>
+        <th>Name</th>
+        <th>E-Mail</th>
+        <th>Balance</th>
+      </tr>
+    </thead>
+    <tbody style="cursor: pointer;">
+      {% for user in users %}
+      <tr>
+        <td>{{ user.id }}</td>
+        <td>{{ user.name }}</td>
+        <td>{{ user.email }}</td>
+        <td>{{ user.balance }}</td>
+      </tr>
+      {% endfor %}
+    </tbody>
+  </table>
+</div>
+<script>
+  $('tr').on('click',function() {
+    var col = $(this).children("td:first").html();
+    console.log(col);
+    window.location.href=window.origin+"/user/"+col;
+  });
+</script>
+
+
+{% endblock %}

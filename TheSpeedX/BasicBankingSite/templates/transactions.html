@@ -1,0 +1,53 @@
+{% extends "basic.html" %}
+
+{% block title %}Home{% endblock %}
+
+{% block main %}
+{% set balance = 0 %}
+<div class="container">
+  <div class="row">
+    <div class="col s3">
+      <span class="flow-text">
+        <u>TRANSACTION LOGS</u>
+      </span>
+    </div>
+    <div class="col s3 offset-s6">
+      <span class="flow-text">
+        Total: {{ transactions | sum(attribute='amount') }}
+      </span>
+    </div>
+
+  </div>
+  <table class="responsive-table highlight">
+    <thead>
+      <tr>
+        <th>ID</th>
+        <th>Sender</th>
+        <th>Receiver</th>
+        <th>Amount</th>
+        <th>Timestamp</th>
+      </tr>
+    </thead>
+    <tbody>
+      {% for transaction in transactions %}
+      <tr>
+        <td>{{ transaction.id }}</td>
+        <td>{{ transaction.sender.name }}</td>
+        <td>{{ transaction.receiver.name }}</td>
+        <td>{{ transaction.amount }}</td>
+        <td>{{ transaction.timestamp }}</td>
+      </tr>
+      {% endfor %}
+    </tbody>
+  </table>
+</div>
+<script>
+  $('tr').on('click',function() {
+    var col = $(this).children("td:first").html();
+    console.log(col);
+    window.location.href=window.origin+"/user/"+col;
+  });
+</script>
+
+
+{% endblock %}
