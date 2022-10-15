@@ -1,0 +1,32 @@
+.playlistSideBar {
+  right: 0px;
+  top: 0px;
+  font-family: 'Lato', sans-serif;
+  position: absolute;
+  width: 15vw;
+  height: 90vh;
+  border-radius: 20px 0 0 20px;
+  background-color: transparent;
+  box-shadow: 0 0 25px #313131; }
+
+.playlistName {
+  color: #ec625f;
+  position: absolute;
+  right: 10%;
+  top: 8%;
+  font-size: 20px;
+  font-weight: 900; }
+
+.numberOfSongs {
+  color: #ec625f;
+  position: absolute;
+  right: 54%;
+  top: 12%;
+  font-weight: 900; }
+
+.duration {
+  color: #ec625f;
+  position: absolute;
+  right: 30%;
+  top: 16%;
+  font-weight: 900; }

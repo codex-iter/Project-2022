@@ -1,0 +1,22 @@
+{% extends "animeMusicPlayer/base/login_base.html" %}
+
+{% block content %}
+
+<div class="backgroundText">
+    <h1 class="heading">Login</h1>
+    <form method="POST">
+        {{error}}
+        <p>
+        {% csrf_token %}
+        <label for="username" class="inputLabel">Username:</label>
+        <input type="text" id="username" name="username" class="formInput usernameLoginInput" required>
+        <p>
+        <label for="Password" class="inputLabel">Password:</label>
+        <input type="password" id="Password" name="password" class="formInput loginInput" required>
+        <p>
+        <input type="submit" class="btn loginbtn" value="Login">
+    </form>
+    <a class="loginPageRedirect" href="{% url 'signup' %}">Don't have an account?</a>
+</div>
+
+{% endblock content %}

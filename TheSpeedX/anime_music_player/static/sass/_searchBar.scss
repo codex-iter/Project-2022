@@ -1,0 +1,51 @@
+$color1: #ec625f;
+$color2: #313131;
+$color3: #414141;
+$color4: #525252;
+$color5: #14ffec;
+$color6: #0d7377;
+
+.searchBar{
+    right: 40vw;
+    top: 0px;
+    box-sizing: border-box;
+    border: 3px solid $color3;
+    font-family: 'Lato', sans-serif;
+    position: absolute;
+    width: 20vw;
+    height: 5vh;
+    border-radius: 25px;
+    background-color: transparent;
+    box-shadow: 0 0 25px $color2;
+    color: $color1;
+    font-size: 20px;
+
+    &:focus{
+        outline: none;
+    }
+}
+
+::placeholder { /* Chrome, Firefox, Opera, Safari 10.1+ */
+  color: $color2;
+  opacity: 1;
+  font-size: 20px; /* Firefox */
+}
+
+.searchIcon{
+    position: absolute;
+    right: 41vw;
+    top: 0.8%;
+    width: 25px;
+    height: 25px;
+    background: url('/static/assets/icons/search.png');
+    background-size: cover;
+    outline: none;
+
+    &:active{
+        border: 1px solid $color1;
+        outline: none;
+    }
+    &:hover{
+        cursor: pointer;
+    }
+}

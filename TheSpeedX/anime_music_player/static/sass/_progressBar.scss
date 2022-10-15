@@ -1,0 +1,203 @@
+$color1: #ec625f;
+$color2: #313131;
+$color3: #414141;
+$color4: #525252;
+$color5: #14ffec;
+$color6: #0d7377;
+
+
+.progressBar{
+    bottom: 0px;
+    font-family: 'Lato', sans-serif;
+    position: absolute;
+    width: 100vw;
+    height: 8.5vh;
+    border-radius: 30px 30px 0 0;
+    background-color: transparent;
+    box-shadow: 0 0 25px $color2;
+}
+
+.trackInfo{
+    height: 100%;
+    width: 25%;
+}
+
+.albumArt{
+    padding: 15px;
+    width: 20%;
+    height: 100%;
+    object-fit: fill;
+}
+
+.trackName{
+    box-sizing: inline;
+    position: absolute;
+    bottom: 30px;
+    left: 85px;
+    font-size: 20px;
+    font-weight: 700;
+    color: $color5;
+
+    &:hover{
+        text-decoration: underline;
+    }
+
+}
+
+.artistName{
+    box-sizing: inline;
+    position: absolute;
+    bottom: 10px;
+    left: 85px;
+    font-size: 15px;
+    font-weight: 700;
+    color: $color5;
+
+    &:hover{
+        text-decoration: underline;
+    }
+
+}
+
+.control-icons{
+    position: absolute;
+    bottom: 47%;
+    width: 20px;
+    height: 20px;
+}
+
+.forward{
+    right: 45%;
+    background: url('/static/assets/icons/forward.png');
+    background-size: cover;
+    outline: none;
+
+    &:active{
+        border: 1px solid $color1;
+        outline: none;
+    }
+    &:hover{
+        cursor: pointer;
+    }
+}
+
+.play{
+    right:50%;
+    width: 40px;
+    height: 40px;
+    bottom: 26%;
+    background: url('/static/assets/icons/play.png');
+    background-size: cover;
+    outline: none;
+
+    &:active{
+        border: 1px solid $color1;
+        outline: none;
+    }
+    &:hover{
+        cursor: pointer;
+    }
+}
+
+.backward{
+    right: 56%;
+    transform: scaleX(-1);
+    background: url('/static/assets/icons/forward.png');
+    background-size: cover;
+    outline: none;
+
+    &:active{
+        border: 1px solid $color1;
+        outline: none;
+    }
+    &:hover{
+        cursor: pointer;
+    }
+}
+
+.trackProgress{
+    position: absolute;
+    bottom: 17%;
+    width: 50%;
+    height: 5%;
+    left: 26%;
+    background-color: $color4;
+}
+
+progress::-webkit-progress-value { background: $color1; }
+
+
+.repeat{
+    left: 58%;
+    background: url('/static/assets/icons/repeat.png');
+    background-size: cover;
+    outline: none;
+
+    &:active{
+        border: 1px solid $color1;
+        outline: none;
+    }
+    &:hover{
+        cursor: pointer;
+    }
+}
+
+.shuffle{
+    left: 35%;
+    background: url('/static/assets/icons/shuffle.png');
+    background-size: cover;
+    outline: none;
+
+    &:active{
+        border: 1px solid $color1;
+        outline: none;
+    }
+    &:hover{
+        cursor: pointer;
+    }
+}
+
+.startTrack{
+    position: absolute;
+    bottom: 10%;
+    left: 23.5%;
+    color: $color1;
+    font-size: 15px;
+}
+
+.endTrack{
+    position: absolute;
+    bottom: 10%;
+    left: 76.5%;
+    color: $color1;
+    font-size: 15px;
+}
+
+.volumeBar{
+    position: absolute;
+    bottom: 30%;
+    width: 10%;
+    height: 5%;
+    left: 87%;
+    background-color: $color4;
+}
+
+.volume{
+    left:85%;
+    bottom: 14%;
+    background: url('/static/assets/icons/sound.png');
+    background-size: cover;
+    outline: none;
+
+    &:active{
+        border: 1px solid $color1;
+        outline: none;
+    }
+    &:hover{
+        cursor: pointer;
+    }
+}
+
+.backwardLink{
+    left: 42%;
+}
