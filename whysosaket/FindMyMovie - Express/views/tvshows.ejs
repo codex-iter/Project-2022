@@ -1,0 +1,120 @@
+
+<%- include('partials/header') -%>
+
+<div class="box">
+    <div class="movie w3-animate-opacity">
+        <div class="upper-div">
+        <img class="movie-poster " src="<%= myMovie.posterURL %>" onerror="this.onerror=null; this.src='/images/default.png'">
+
+        <div class="movie-overview">
+        <h1><%= myMovie.title %></h1>
+        <p><%= myMovie.overview %></p>
+        </div>
+        <div class="movie-info">
+        <h3>Ratings: <%= myMovie.ratings %></h3>
+        <h3>Seasons: <%= myMovie.seasonCount %></h3>
+        <h3>Episodes: <%= myMovie.episodes %></h3>
+        <h3>Status: <%= myMovie.status %></h3>
+        <h3>Release Date: <%= myMovie.release_date %></h3>
+        </div>
+        </div>
+
+        <div class="lower-div-left">
+            <h2>More Info</h2>
+            <h3>Genre: <% for(let i=0;i<myMovie.genre.length-1;i++){ %>
+                <%= myMovie.genre[i] %>, 
+            <% } %> <%= myMovie.genre[myMovie.genre.length-1] %>
+            </h3>
+
+            <h3>Production House(s): <% for(let i=0;i<myMovie.compinies.length-1;i++){ %>
+                <%= myMovie.compinies[i] %>, 
+            <% } %> <%= myMovie.compinies[myMovie.compinies.length-1] %>
+            </h3>
+
+            <h3>Language(s): <% for(let i=0;i<myMovie.languages.length-1;i++){ %>
+                <%= myMovie.languages[i] %>, 
+            <% } %> <%= myMovie.languages[myMovie.languages.length-1] %>
+            </h3>
+            <h3>Country: <%= myMovie.country %></h3>
+        </div>
+
+        <div class ="lower-div-right">
+            <h2>Similar Shows</h2>
+            <div class="cast-scroll">
+            <div class="movie-suggestion">
+            <% for(let i=0; i < myMovie.similarMoviesArray.length; i++){ %>
+            <div class="movie-suggestion-item" onclick="location.href='/tv/details/<%=myMovie.similarMoviesArray[i].id %>' " style="cursor:pointer;">
+            <img class="movie-poster " src="<%=myMovie.similarMoviesArray[i].posterURL %>" onerror="this.onerror=null; this.src='/images/default.png'">
+            <h3><%=myMovie.similarMoviesArray[i].title%> </h3>
+            </div>
+             <% } %>
+            </div>
+            </div>
+        </div>
+    </div>
+</div>
+
+<%- include('partials/cast') -%>
+
+<!-- seasons -->
+
+<div class="box w3-animate-opacity">
+    <div class="movie seasons">
+    <h1>Seasons</h1>
+
+    <div class="box">
+    <ul class="nav nav-pills mb-3" id="pills-tab" role="tablist">
+            <!-- setting the active button -->
+            <li class="nav-item" role="presentation">
+            <button class="nav-link season-btn active" id="pills-<%=myMovie.seasons[0].id%>-tab" data-bs-toggle="pill" data-bs-target="#tab-<%=myMovie.seasons[0].id%>" type="button" role="tab">1</button>
+            </li>
+
+        <%  for(let i=1; i<myMovie.seasons.length; i++) { %>
+              <li class="nav-item" role="presentation">
+              <button class="nav-link sseason-btn" id="pills-<%=myMovie.seasons[i].id%>-tab" data-bs-toggle="pill" data-bs-target="#tab-<%=myMovie.seasons[i].id%>" type="button" role="tab"><%= i+1 %></button>
+              </li>
+        <% } %>    
+    </ul>  
+    </div> 
+      
+      <div class="tab-content" id="v-pills-tabContent">
+        <!-- setting the active tab -->
+        <div class="tab-pane fade show active" id="tab-<%=myMovie.seasons[0].id%>" role="tabpanel" aria-labelledby="nav-home-tab">
+            <div class="upper-div">
+                <img class="movie-poster " src="<%= myMovie.seasons[0].posterURL %>" onerror="this.onerror=null; this.src='/images/default.png'">
+        
+                <div class="movie-overview">
+                <h1><%= myMovie.seasons[0].name %></h1>
+                <p><%= myMovie.seasons[0].overview %></p>
+                </div>
+                <div class="movie-info">
+                <h3>Episodes: <%= myMovie.seasons[0].episodes %></h3>
+                <h3>Release Date: <%= myMovie.seasons[0].release_date %></h3>
+                </div>
+            </div>
+        </div>
+
+
+        <%  for(let i=1; i<myMovie.seasons.length; i++) { %>
+        <div class="tab-pane fade" id="tab-<%=myMovie.seasons[i].id%>" role="tabpanel">
+            <div class="upper-div">
+                <img class="movie-poster " src="<%= myMovie.seasons[i].posterURL %>" onerror="this.onerror=null; this.src='/images/default.png'">
+        
+                <div class="movie-overview">
+                <h1><%= myMovie.seasons[i].name %></h1>
+                <p><%= myMovie.seasons[i].overview %></p>
+                </div>
+                <div class="movie-info">
+                <h3>Episodes: <%= myMovie.seasons[i].episodes %></h3>
+                <h3>Release Date: <%= myMovie.seasons[i].release_date %></h3>
+                </div>
+            </div>
+        </div>
+        <% } %>
+      </div>
+
+
+    </div>  
+</div>    
+
+<%- include('partials/footer') -%>

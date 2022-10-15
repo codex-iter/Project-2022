@@ -1,0 +1,67 @@
+<div class="create">
+    <form action="/transfer" method="post">
+        <br>
+        <h3>Sender's Details</h3>
+        <br>
+        <div class="mb-3">
+            <label for="exampleInputEmail1" class="form-label">Your Account Number</label>
+            <input name="myAccount" type="Number" class="form-control" id="exampleInputEmail1" aria-describedby="emailHelp"
+                required autocomplete="off">
+            <div id="emailHelp" class="form-text">Be Sure to Enter Correct Account Details</div>
+        </div>
+        <div class="mb-3">
+            <label for="exampleInputPassword1" class="form-label">Your Password</label>
+            <input name="pin" type="Password" class="form-control" id="exampleInputPassword1" required>
+        </div>
+
+        <div class="form-group">
+            <label for="exampleFormControlSelect1">Your Branch</label>
+            <select name="myBranch" class="form-control" id="exampleFormControlSelect1">
+                <% for(let i=0;i<branches.length;i++) { %>
+                    <option>
+                        <%= branches[i].branch %>
+                    </option>
+                    <% } %>
+            </select>
+        </div>
+        <br>
+
+        <br>
+        <h3>Recipient's Details</h3>
+        <br>
+
+        <div class="mb-3">
+            <label for="exampleInputEmail1" class="form-label">Recipient's Account Number</label>
+            <input name="resAccount" type="Number" class="form-control" id="exampleInputEmail1" aria-describedby="emailHelp"
+                required autocomplete="off" value="<%= account %>">
+            <div id="emailHelp" class="form-text">Be Sure to Enter Correct Account Details</div>
+        </div>
+
+        <div class="form-group">
+            <label for="exampleFormControlSelect1">Recipient's Branch</label>
+            <select name="resBranch" class="form-control" id="exampleFormControlSelect1">
+                <% for(let i=0;i<branches.length;i++) { %>
+                    <option>
+                        <%= branches[i].branch %>
+                    </option>
+                    <% } %>
+            </select>
+        </div>
+        <br>
+
+        <div class="mb-3">
+            <label for="exampleInputEmail1" class="form-label">Enter Amount</label>
+            <input name="amount" type="Number" class="form-control" id="exampleInputEmail1" aria-describedby="emailHelp"
+                required autocomplete="off">
+            <div id="emailHelp" class="form-text">Be Sure to Double Check The Amount</div>
+        </div>
+
+        <div class="mb-3 form-check">
+            <input type="checkbox" class="form-check-input" id="exampleCheck1" required>
+            <label class="form-check-label" for="exampleCheck1">Confirm Send</label>
+        </div>
+
+
+        <button type="submit" class="btn btn-success">Transfer</button>
+    </form>
+</div>

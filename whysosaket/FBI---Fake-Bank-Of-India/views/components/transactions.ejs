@@ -1,0 +1,30 @@
+<div class="transaction-section table-responsive-sm">
+
+
+    <!-- The below code is for the heading of the transactions page -->
+    <table class="table table-bordered">
+        <tr class="table-dark">
+        <th>Account</th>
+        <th>Amount</th>
+        <th>Date</th>
+        <th>Transaction ID</th>
+        </tr>
+
+        <% for(let i=0; i<transactions.length; i++) { %>
+        <tr class="<%= transactions[i].type %>">
+            <td><h6><span class="data">Account: </span><%= transactions[i].account %></h6></td>
+            <td><h6><span class="data">Amount: </span> $<%= transactions[i].amount %></h6></td>
+            <td><h6><span class="data">Date: </span><%= transactions[i].date %></h6></td>
+            <td><h6><span class="data">Transaction ID: </span><%= transactions[i].id %></h6></td>
+        </tr>
+        <% } %>
+
+    </table>
+
+    <br>
+
+    <% if(transactions.length === 0) { %>
+        <h3 style="color: rgb(229, 208, 208);">No Transactions</h3>
+    <% } %>
+    
+</div>

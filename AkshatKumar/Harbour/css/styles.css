@@ -1,0 +1,101 @@
+body{
+font-size: 'Montserrat';
+padding-bottom: 0px;
+}
+h1{
+    font-family: 'Montserrat';
+    font-weight: bold;
+}
+h3{
+    font-family: 'Montserrat';
+    font-weight: bold;
+}
+p{
+    color: grey;
+}
+
+#title{
+    color: #fff;
+    background-color: #4a2a67;
+    margin: 0px 0px;
+    
+    
+    
+}
+.logo{
+    width: 50px;
+    height: 50px;
+    margin: 0px 30px 0px 10px;
+    padding-left: 0px;
+    border-left: 0px;
+}
+.nav-item{
+    padding: 0px 18px;
+    font-size: 1.5rem;
+}
+.brand{
+    font-family: 'Patua One', cursive;
+    margin: 0px 30% 0px 0px;
+}
+.navbar-nav{
+    text-align: center;
+    padding-left: 30px;
+}
+
+
+
+
+
+
+
+#carousel{
+   margin: 0px 0px; 
+}
+
+
+
+
+
+
+#features{
+    padding: 7% 10%;
+    
+}
+.feature-box{
+    text-align: center;
+}
+.icon{
+    color: #ff735a;
+    margin-bottom: 1rem;
+}
+.icon:hover{
+    color: #ff8d79;
+}
+
+
+
+
+.about{
+    padding: 0% 15%;
+    text-align: center;
+    margin: 30px 10px;
+    font-size: 2.5rem;
+}
+
+.about-img{
+    float: left;
+    margin-right: 7%;
+} 
+
+.row{
+    margin: 7% 5%;
+}
+
+footer{
+    background-color: #4a2a67;
+    color: #fff;
+    margin-bottom: 0px;
+}
+footer p{
+    color: #fff;
+}

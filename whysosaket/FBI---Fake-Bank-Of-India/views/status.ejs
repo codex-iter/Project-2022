@@ -1,0 +1,15 @@
+<%- include('partials/header') -%>
+
+<%- include('partials/navbar') -%>
+<%- include('components/alerts') -%>
+
+
+<div class="container">
+    <div class="inner-container">
+        <img src="images/<%= statusImage %>.png" class="status">
+        <br><br>
+        <h3><%= statusText %></h3>
+    </div>
+</div>
+
+<%- include('partials/footer') -%>

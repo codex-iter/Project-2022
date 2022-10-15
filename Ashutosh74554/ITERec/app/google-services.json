@@ -1,0 +1,39 @@
+{
+  "project_info": {
+    "project_number": "1072403106953",
+    "project_id": "iterec-940af",
+    "storage_bucket": "iterec-940af.appspot.com"
+  },
+  "client": [
+    {
+      "client_info": {
+        "mobilesdk_app_id": "1:1072403106953:android:009d9c8e243b928dde4a58",
+        "android_client_info": {
+          "package_name": "com.example.iterec"
+        }
+      },
+      "oauth_client": [
+        {
+          "client_id": "1072403106953-evm3hvf6njoeeic2bkbvht6e62aurole.apps.googleusercontent.com",
+          "client_type": 3
+        }
+      ],
+      "api_key": [
+        {
+          "current_key": "AIzaSyA7XAduEAcUIHR2ij3gqK8-wVQW57ZYqaE"
+        }
+      ],
+      "services": {
+        "appinvite_service": {
+          "other_platform_oauth_client": [
+            {
+              "client_id": "1072403106953-evm3hvf6njoeeic2bkbvht6e62aurole.apps.googleusercontent.com",
+              "client_type": 3
+            }
+          ]
+        }
+      }
+    }
+  ],
+  "configuration_version": "1"
+}

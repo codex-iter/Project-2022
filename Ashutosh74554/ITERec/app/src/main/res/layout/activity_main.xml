@@ -1,0 +1,239 @@
+<?xml version="1.0" encoding="utf-8"?>
+<androidx.constraintlayout.widget.ConstraintLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    android:background="#092F4E"
+    android:id="@+id/layout"
+    tools:context=".MainActivity">
+
+    <androidx.appcompat.widget.Toolbar
+        android:id="@+id/toolbar"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:background="#1D5A8F"
+        android:theme="@style/ThemeOverlay.AppCompat.Dark.ActionBar"
+        app:flow_horizontalBias="0.5"
+        app:layout_constraintTop_toTopOf="parent"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintEnd_toEndOf="parent"/>
+
+    <de.hdodenhof.circleimageview.CircleImageView
+        android:id="@+id/user_pic"
+        android:layout_width="120dp"
+        android:layout_height="120dp"
+        android:layout_marginTop="30dp"
+        android:src="@drawable/user_pro_pic"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toBottomOf="@id/toolbar"/>
+
+    <TextView
+        android:id="@+id/user_name"
+        android:layout_width="150dp"
+        android:layout_height="wrap_content"
+        android:layout_marginTop="10dp"
+        android:textColor="@color/white"
+        android:text="Username"
+        android:textStyle="bold"
+        android:textSize="22sp"
+        android:gravity="center"
+        app:layout_constraintEnd_toEndOf="@+id/user_pic"
+        app:layout_constraintStart_toStartOf="@+id/user_pic"
+        app:layout_constraintTop_toBottomOf="@id/user_pic"/>
+
+    <TextView
+        android:id="@+id/user_regd"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:textColor="#D5DEE6"
+        android:text="Registration Number"
+        android:textSize="18sp"
+        app:layout_constraintEnd_toEndOf="@+id/user_pic"
+        app:layout_constraintStart_toStartOf="@+id/user_pic"
+        app:layout_constraintTop_toBottomOf="@id/user_name" />
+
+    <androidx.cardview.widget.CardView
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:layout_marginTop="15dp"
+        android:layout_marginHorizontal="5dp"
+        app:cardCornerRadius="20dp"
+        app:cardBackgroundColor="#093F61"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toBottomOf="@id/user_regd">
+
+        <androidx.cardview.widget.CardView
+            android:id="@+id/sem_1"
+            android:layout_width="match_parent"
+            android:layout_height="54dp"
+            android:layout_marginTop="20dp"
+            android:layout_marginHorizontal="10dp"
+            app:cardCornerRadius="15dp"
+            app:cardMaxElevation="10dp"
+            app:cardBackgroundColor="#205E95">
+
+            <TextView
+                android:layout_width="match_parent"
+                android:layout_height="match_parent"
+                android:text="Semester 1"
+                android:textSize="20sp"
+                android:textStyle="bold"
+                android:textColor="@color/white"
+                android:layout_marginTop="10dp"
+                android:layout_marginStart="12dp"/>
+        </androidx.cardview.widget.CardView>
+
+        <androidx.cardview.widget.CardView
+            android:id="@+id/sem_2"
+            android:layout_width="match_parent"
+            android:layout_height="54dp"
+            android:layout_marginTop="82dp"
+            android:layout_marginHorizontal="10dp"
+            app:cardCornerRadius="15dp"
+            app:cardMaxElevation="10dp"
+            app:cardBackgroundColor="#205E95">
+
+            <TextView
+                android:layout_width="match_parent"
+                android:layout_height="match_parent"
+                android:text="Semester 2"
+                android:textSize="20sp"
+                android:textStyle="bold"
+                android:textColor="@color/white"
+                android:layout_marginTop="10dp"
+                android:layout_marginStart="12dp"/>
+        </androidx.cardview.widget.CardView>
+
+        <androidx.cardview.widget.CardView
+            android:id="@+id/sem_3"
+            android:layout_width="match_parent"
+            android:layout_height="54dp"
+            android:layout_marginTop="144dp"
+            android:layout_marginHorizontal="10dp"
+            app:cardCornerRadius="15dp"
+            app:cardMaxElevation="10dp"
+            app:cardBackgroundColor="#205E95">
+
+            <TextView
+                android:layout_width="match_parent"
+                android:layout_height="match_parent"
+                android:text="Semester 3"
+                android:textSize="20sp"
+                android:textStyle="bold"
+                android:textColor="@color/white"
+                android:layout_marginTop="10dp"
+                android:layout_marginStart="12dp"/>
+        </androidx.cardview.widget.CardView>
+
+        <androidx.cardview.widget.CardView
+            android:id="@+id/sem_4"
+            android:layout_width="match_parent"
+            android:layout_height="54dp"
+            android:layout_marginTop="206dp"
+            android:layout_marginHorizontal="10dp"
+            app:cardCornerRadius="15dp"
+            app:cardMaxElevation="10dp"
+            app:cardBackgroundColor="#205E95">
+
+            <TextView
+                android:layout_width="match_parent"
+                android:layout_height="match_parent"
+                android:text="Semester 4"
+                android:textSize="20sp"
+                android:textStyle="bold"
+                android:textColor="@color/white"
+                android:layout_marginTop="10dp"
+                android:layout_marginStart="12dp"/>
+        </androidx.cardview.widget.CardView>
+
+        <androidx.cardview.widget.CardView
+            android:id="@+id/sem_5"
+            android:layout_width="match_parent"
+            android:layout_height="54dp"
+            android:layout_marginTop="268dp"
+            android:layout_marginHorizontal="10dp"
+            app:cardCornerRadius="15dp"
+            app:cardMaxElevation="10dp"
+            app:cardBackgroundColor="#205E95">
+
+            <TextView
+                android:layout_width="match_parent"
+                android:layout_height="match_parent"
+                android:text="Semester 5"
+                android:textSize="20sp"
+                android:textStyle="bold"
+                android:textColor="@color/white"
+                android:layout_marginTop="10dp"
+                android:layout_marginStart="12dp"/>
+        </androidx.cardview.widget.CardView>
+
+        <androidx.cardview.widget.CardView
+            android:id="@+id/sem_6"
+            android:layout_width="match_parent"
+            android:layout_height="54dp"
+            android:layout_marginTop="330dp"
+            android:layout_marginHorizontal="10dp"
+            app:cardCornerRadius="15dp"
+            app:cardMaxElevation="10dp"
+            app:cardBackgroundColor="#205E95">
+
+            <TextView
+                android:layout_width="match_parent"
+                android:layout_height="match_parent"
+                android:text="Semester 6"
+                android:textSize="20sp"
+                android:textStyle="bold"
+                android:textColor="@color/white"
+                android:layout_marginTop="10dp"
+                android:layout_marginStart="12dp"/>
+        </androidx.cardview.widget.CardView>
+
+        <androidx.cardview.widget.CardView
+            android:id="@+id/sem_7"
+            android:layout_width="match_parent"
+            android:layout_height="54dp"
+            android:layout_marginTop="392dp"
+            android:layout_marginHorizontal="10dp"
+            app:cardCornerRadius="15dp"
+            app:cardMaxElevation="10dp"
+            app:cardBackgroundColor="#205E95">
+
+            <TextView
+                android:layout_width="match_parent"
+                android:layout_height="match_parent"
+                android:text="Semester 7"
+                android:textSize="20sp"
+                android:textStyle="bold"
+                android:textColor="@color/white"
+                android:layout_marginTop="10dp"
+                android:layout_marginStart="12dp"/>
+        </androidx.cardview.widget.CardView>
+
+        <androidx.cardview.widget.CardView
+            android:id="@+id/sem_8"
+            android:layout_width="match_parent"
+            android:layout_height="54dp"
+            android:layout_marginTop="454dp"
+            android:layout_marginHorizontal="10dp"
+            android:layout_marginBottom="10dp"
+            app:cardCornerRadius="15dp"
+            app:cardMaxElevation="10dp"
+            app:cardBackgroundColor="#205E95">
+
+            <TextView
+                android:layout_width="match_parent"
+                android:layout_height="match_parent"
+                android:text="Semester 8"
+                android:textSize="20sp"
+                android:textStyle="bold"
+                android:textColor="@color/white"
+                android:layout_marginTop="10dp"
+                android:layout_marginStart="12dp"/>
+        </androidx.cardview.widget.CardView>
+
+    </androidx.cardview.widget.CardView>
+
+</androidx.constraintlayout.widget.ConstraintLayout>

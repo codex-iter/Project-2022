@@ -1,0 +1,30 @@
+<%- include('partials/header') -%>
+
+<%- include('partials/navbar') -%>
+<%- include('components/alerts') -%>
+
+<div class="create">
+    <h2>Delete Account</h2>
+    <form action="/delete" method="post">
+        <div class="mb-3">
+          <label for="exampleInputEmail1" class="form-label">Account Number</label>
+          <input name="account" type="number" class="form-control" id="exampleInputEmail1" aria-describedby="emailHelp" value="<%= account %>" required disabled autocomplete="off">
+          <input name="accountNumber" type="number" class="form-control" id="exampleInputEmail1" aria-describedby="emailHelp" value="<%= account %>" required autocomplete="off" hidden>
+          <div id="emailHelp" class="form-text">Your Account Will Be Deleted</div>
+        </div>
+
+          <div class="mb-3">
+            <label for="exampleInputPassword1" class="form-label">Password</label>
+            <input name="pin" id="confirmpin" type="password" class="form-control" id="exampleInputPassword1" required>
+          </div>
+       
+        <div class="mb-3 form-check">
+          <input type="checkbox" class="form-check-input" id="exampleCheck1" required>
+          <label class="form-check-label" for="exampleCheck1">Terms and Conditions</label>
+        </div>
+        <button type="submit" class="btn btn-danger">Delete</button>
+      </form>
+</div>
+
+
+<%- include('partials/footer') -%>

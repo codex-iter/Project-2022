@@ -1,0 +1,341 @@
+@import url("https://fonts.googleapis.com/css2?family=Fira+Code:wght@400;500;600&family=Montserrat:wght@300;400;700;900&family=Oswald:wght@200;300;400;500;600;700&family=Roboto+Condensed:wght@300&display=swap");
+
+body {
+  color: white;
+  font-family: "Montserrat", sans-serif;
+}
+
+.bg-img {
+  opacity: 0.8;
+  position: fixed;
+  width: 100%;
+  height: 100%;
+  top: 0px;
+  left: 0px;
+  z-index: -1;
+  background-repeat: repeat-y;
+  background-image: url("images/indexOverlay.jpg");
+  object-fit: cover;
+}
+
+.trademark {
+  margin: 1rem auto;
+  text-align: center;
+  color: rgb(255, 255, 255);
+}
+
+/* The below code is for account details section */
+.index-section {
+  background-color: rgba(120, 96, 123, 0.3);
+  padding: 2rem;
+  max-width: 90%;
+  margin: auto;
+}
+.account-section {
+  text-align: center;
+  margin: 1rem;
+}
+.account {
+  margin: 3rem auto;
+  background-color: rgba(202, 202, 202, 0.4);
+  max-width: 80%;
+  overflow: auto;
+  text-align: left;
+  font-family: "Oswald";
+
+  border-radius: 10px;
+}
+
+.account-left {
+  float: left;
+  height: 15rem;
+}
+
+.account .profile-pic {
+  width: 6rem;
+  margin: 1rem;
+}
+
+.account-right {
+  margin: 1rem auto;
+}
+
+.account h5 {
+  font-weight: 700;
+  color: rgb(0, 102, 255);
+}
+
+.info {
+  font-weight: 300;
+  font-family: "Fira Code", monospace;
+  color: black;
+}
+
+/* This below is for transactions section */
+.transaction-section {
+  text-align: center;
+  color: black;
+}
+
+.table{
+  margin: 1rem auto;
+  max-width: 80%;
+  overflow: auto;
+  text-align: left;
+  font-family: "Oswald";
+  border-radius: 10px;
+}
+.transaction {
+  max-width: 80%;
+  text-align: center;
+  margin: 0.1rem auto;
+  background-color: rgb(193, 220, 220);
+}
+
+.transactions {
+  max-height: 24rem;
+  overflow-y: scroll;
+}
+
+/* Hide scrollbar for Chrome, Safari and Opera */
+.transactions::-webkit-scrollbar {
+  display: none;
+}
+
+.transaction .detail {
+  max-width: 30%;
+  display: inline-block;
+  margin: 1rem 3rem;
+}
+
+.info h5 {
+  font-weight: 300;
+}
+
+.data {
+  visibility: hidden;
+  position: absolute;
+}
+
+.header .transaction h3 {
+  font-family: "Montserrat";
+  font-weight: 700;
+  font-size: 0.9rem;
+  text-align: center;
+}
+
+.header .detail {
+  width: 12%;
+}
+
+.credit {
+  background-color: rgb(34, 215, 34);
+}
+
+.debit {
+  background-color: rgb(200, 55, 55);
+}
+
+.detail.info {
+  font-family: "Montserrat";
+  color: white;
+  font-weight: 300;
+}
+
+/* Below code is for create page */
+.create {
+  text-align: center;
+  margin: 3rem;
+}
+
+.create form {
+  max-width: 50%;
+  margin: auto;
+  text-align: left;
+  background-color: rgba(120, 96, 123, 0.3);
+  padding: 2rem;
+}
+
+/* The below code is for transfer section */
+
+.transaction-section {
+  text-align: center;
+}
+
+.transfer {
+  margin: 2rem auto;
+  text-align: left;
+  background-color: grey;
+}
+
+/* Below code is for All Customers section */
+
+.customer-sections {
+  text-align: center;
+}
+
+.customer.header {
+  margin: 1rem auto;
+  max-width: 80%;
+}
+
+.outer {
+  max-width: 80%;
+  margin: auto;
+  padding: 1rem;
+}
+
+.customer {
+  background-color: rgba(120, 96, 123, 0.3);
+  font-family: "Oswald";
+  margin: 0.2rem auto;
+  text-align: left;
+  padding: 0.7rem;
+  max-width: 80%;
+
+}
+
+.customer:hover {
+  background-color: rgba(60, 205, 67, 0.3);
+}
+
+.customer.header:hover {
+  background-color: rgba(120, 96, 123, 0.3);
+}
+
+.cus-info {
+  display: inline-block;
+  width: 23%;
+  margin: 1rem auto;
+  text-align: center;
+}
+
+.cus-info h6 {
+  font-weight: 300;
+}
+
+/* for making the page responsive */
+@media (max-aspect-ratio: 9/10) {
+
+  .status {
+    max-width: 300px;
+  }
+  .account-left {
+    float: none;
+    height: 7rem;
+    text-align: center;
+  }
+
+  .account h5{
+    font-size: 0.8rem;
+  }
+  .account .info{
+    font-size: 0.8rem;
+  }
+  .account-right {
+    margin: 1rem 2rem;
+  }
+  .transaction {
+    padding: 1rem 0;
+  }
+
+  .transaction .data,
+  .customer .data {
+    visibility: visible;
+    position: relative;
+  }
+
+  .transaction .detail {
+    display: block;
+    max-width: 100%;
+  }
+
+  .header {
+    position: absolute;
+    visibility: hidden;
+  }
+
+  .create form {
+    min-width: 100%;
+  }
+
+  .cus-info {
+    display: block;
+    width: 80%;
+    margin: 1rem;
+    text-align: left;
+  }
+
+  .btn {
+    display: block;
+    text-align: center;
+    margin: 1rem auto;
+  }
+}
+
+/* The below code is for alert message scrolling */
+.alert {
+  height: 50px;
+  overflow: hidden;
+  position: relative;
+  color: red;
+  font-weight: 700;
+  margin: 3rem auto 1rem auto;
+}
+.alert p {
+  position: absolute;
+  width: 100%;
+  height: 100%;
+  margin: 0;
+  line-height: 50px;
+  text-align: center;
+  /* Starting position */
+  -moz-transform: translateX(100%);
+  -webkit-transform: translateX(100%);
+  transform: translateX(100%);
+  /* Apply animation to this element */
+  -moz-animation: scroll-left 15s linear infinite;
+  -webkit-animation: scroll-left 15s linear infinite;
+  animation: scroll-left 15s linear infinite;
+}
+/* Move it (define the animation) */
+@-moz-keyframes scroll-left {
+  0% {
+    -moz-transform: translateX(100%);
+  }
+  100% {
+    -moz-transform: translateX(-100%);
+  }
+}
+@-webkit-keyframes scroll-left {
+  0% {
+    -webkit-transform: translateX(100%);
+  }
+  100% {
+    -webkit-transform: translateX(-100%);
+  }
+}
+@keyframes scroll-left {
+  0% {
+    -moz-transform: translateX(100%); /* Browser bug fix */
+    -webkit-transform: translateX(100%); /* Browser bug fix */
+    transform: translateX(100%);
+  }
+  100% {
+    -moz-transform: translateX(-100%); /* Browser bug fix */
+    -webkit-transform: translateX(-100%); /* Browser bug fix */
+    transform: translateX(-100%);
+  }
+}
+
+/* The below code is for button in account page */
+
+/* The below is the code for success and failure pages animation */
+.container {
+  text-align: center;
+  margin: 2rem auto;
+}
+
+.status{
+  max-width: 300px;
+}
