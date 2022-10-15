@@ -1,0 +1,115 @@
+* {
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box;
+  font-family: 'Lato', sans-serif; }
+
+.backgroundImage {
+  width: 100vw;
+  height: 100vh;
+  animation-name: slideShow;
+  animation-duration: 60s;
+  animation-iteration-count: infinite;
+  animation-delay: 0s; }
+
+.backgroundText {
+  position: absolute;
+  top: 15%;
+  left: 33%;
+  user-select: none;
+  /* supported by Chrome and Opera */
+  -webkit-user-select: none;
+  /* Safari */
+  -khtml-user-select: none;
+  /* Konqueror HTML */
+  -moz-user-select: none;
+  /* Firefox */
+  -ms-user-select: none; }
+
+form {
+  box-shadow: 0 0 15px #414141;
+  width: 600px;
+  height: 500px;
+  text-align: center; }
+
+.formInput {
+  padding: 10px;
+  margin: 20px;
+  margin-top: 25px;
+  border: none;
+  background-color: transparent;
+  border-bottom: 2px solid #525252;
+  font-size: 20px; }
+  .formInput:focus {
+    outline: none;
+    border: 1px solid #ec625f;
+    box-shadow: 0 0 10px #414141; }
+
+label {
+  font-size: 20px;
+  font-weight: 400; }
+
+.heading {
+  color: #ec625f;
+  font-size: 40px;
+  text-align: center; }
+
+.loginPageRedirect {
+  text-decoration: none;
+  color: #14ffec;
+  margin-left: 200px;
+  font-size: 20px;
+  font-weight: 700; }
+  .loginPageRedirect:hover {
+    color: #00e0ce;
+    cursor: pointer; }
+
+.btn {
+  background-color: transparent;
+  width: 150px;
+  height: 45px;
+  color: #ec625f;
+  font-size: 20px;
+  border-radius: 100px;
+  margin-top: 50px; }
+  .btn:hover {
+    cursor: pointer;
+    outline: none;
+    box-shadow: 0 0 10px #414141; }
+
+.inputLabel {
+  font-size: 20px;
+  font-weight: 400; }
+
+.formInput.usernameLoginInput {
+  margin-top: 140px; }
+
+#password {
+  margin-top: 40px; }
+
+@keyframes slideShow {
+  0% {
+    background: url("/static/backgroundImage/animeGirl1.jpg") no-repeat fixed;
+    filter: blur(5px);
+    background-size: cover; }
+  24% {
+    filter: blur(12px); }
+  25% {
+    background: url("/static/backgroundImage/animeGirl2.jpg") no-repeat fixed;
+    filter: blur(5px);
+    background-size: cover; }
+  49% {
+    filter: blur(12px); }
+  50% {
+    background: url("/static/backgroundImage/animeGirl3.jpg") no-repeat fixed;
+    filter: blur(5px);
+    background-size: cover; }
+  74% {
+    filter: blur(12px); }
+  75% {
+    background: url("/static/backgroundImage/animeGirl4.png") no-repeat fixed;
+    filter: blur(5px);
+    background-size: cover; }
+  100% {
+    filter: blur(12px);
+    background: url("/static/backgroundImage/animeGirl5.jpg") no-repeat fixed; } }

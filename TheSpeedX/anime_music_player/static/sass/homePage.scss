@@ -1,0 +1,126 @@
+$color1: #ec625f;
+$color2: #313131;
+$color3: #414141;
+$color4: #525252;
+$color5: #14ffec;
+$color6: #0d7377;
+
+*{
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+    font-family: 'Lato', sans-serif;
+}
+
+.backgroundImage{
+    width: 100vw;
+    height: 100vh;
+    animation-name: homeSlideShow;
+    animation-duration: 600s;
+    animation-iteration-count: infinite;
+    animation-delay: 0s;
+}
+
+
+@keyframes homeSlideShow {
+    0% {
+        background: url("/static/backgroundImage/animeGirl6.jpg") no-repeat fixed;
+        background-size: cover;
+    }
+
+    9% {
+        filter: blur(12px);
+    }
+
+    10%{
+        background: url("/static/backgroundImage/animeGirl7.jpg") no-repeat fixed;
+        filter: blur(5px);
+        background-size: cover;
+    }
+
+    19%{
+        filter: blur(12px);
+    }
+
+    20%{
+        background: url("/static/backgroundImage/animeGirl8.jpg") no-repeat fixed;
+        filter: blur(5px);
+        background-size: cover;
+    }
+
+    29%{
+        filter: blur(12px);
+    }
+
+    30%{
+        background: url("/static/backgroundImage/animeGirl9.jpg") no-repeat fixed;
+        background-size: cover;
+        filter: blur(5px);
+    }
+
+    39%{
+        filter: blur(12px);
+    }
+
+    40%{
+        background: url("/static/backgroundImage/animeGirl10.jpg") no-repeat fixed;
+        background-size: cover;
+        filter: blur(5px);
+    }
+
+    49%{
+        filter: blur(12px);
+    }
+
+    50%{
+        background: url("/static/backgroundImage/animeGirl11.jpg") no-repeat fixed;
+        background-size: cover;
+        filter: blur(5px);
+    }
+
+    59%{
+        filter: blur(12px);
+    }
+
+    60%{
+        background: url("/static/backgroundImage/animeGirl12.jpg") no-repeat fixed;
+        background-size: cover;
+        filter: blur(5px);
+    }
+
+    69%{
+        filter: blur(12px);
+    }
+
+    70%{
+        background: url("/static/backgroundImage/animeGirl13.jpg") no-repeat fixed;
+        background-size: cover;
+        filter: blur(5px);
+    }
+
+    79%{
+        filter: blur(12px);
+    }
+
+    80%{
+        background: url("/static/backgroundImage/animeGirl14.png") no-repeat fixed;
+        background-size: cover;
+        filter: blur(5px);
+    }
+
+    89%{
+        filter: blur(12px);
+    }
+
+    90%{
+        background: url("/static/backgroundImage/animeGirl15.jpg") no-repeat fixed;
+        background-size: cover;
+        filter: blur(5px);
+    }
+
+    100% {
+        filter: blur(5px);
+        background: url("/static/backgroundImage/animeGirl5.jpg") no-repeat fixed;
+    }
+
+}

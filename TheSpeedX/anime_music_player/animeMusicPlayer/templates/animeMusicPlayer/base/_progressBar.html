@@ -1,0 +1,27 @@
+{% load static %}
+
+<div class="progressBar">
+    <div class="trackInfo">
+        <img src="{% static 'assets/songArt/faded.jpeg' %}" alt="playlist" class="albumArt">
+        <a href="#" class="trackName"><strong>Faded</strong</a>
+        <a href="#" class="artistName">Alan Walker</a>
+    </div>
+    <div class="trackControls">
+        <button type="button" name="button" class="forward control-icons">
+        </button>
+        <button type="button" name="button" class="backward control-icons">
+        </button>
+        <button type="button" name="button" class="play control-icons">
+        </button>
+        <button type="button" name="button" class="repeat control-icons">
+        </button>
+        <button type="button" name="button" class="shuffle control-icons">
+        </button>
+        <progress value="20" max="100" class="trackProgress"></progress>
+        <h6 class="startTrack">0:00</h6>
+        <h6 class="endTrack">3:20</h6>
+        <button type="button" name="button" class="volume control-icons">
+        </button>
+        <progress value="20" max="100" class="volumeBar"></progress>
+    </div>
+</div>

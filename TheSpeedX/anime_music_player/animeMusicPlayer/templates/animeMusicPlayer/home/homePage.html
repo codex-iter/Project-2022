@@ -1,0 +1,27 @@
+{% load static %}
+<!DOCTYPE html>
+<html lang="en" dir="ltr">
+    <head>
+        <meta charset="utf-8">
+        <title>HomePage</title>
+        <link rel="shortcut icon" href="https://img.icons8.com/color/48/000000/music.png" type="image/png">
+        <link href="https://fonts.googleapis.com/css?family=Lato&display=swap" rel="stylesheet">
+        <link rel="stylesheet" href="{% static 'css/homePage.css' %}">
+        <link rel="stylesheet" href="{% static 'css/_iconSideBar.css' %}">
+        <link rel="stylesheet" href="{% static 'css/_progressBar.css' %}">
+        <link rel="stylesheet" href="{% static 'css/_playlistSideBar.css' %}">
+        <link rel="stylesheet" href="{% static 'css/_searchBar.css' %}">
+        <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.4.1/jquery.min.js"></script>
+    </head>
+    <body>
+
+        <div class="backgroundImage">
+
+        </div>
+        {% include "animeMusicPlayer/base/_iconSideBar.html" %}
+        {% include "animeMusicPlayer/base/_progressBar.html" %}
+        {% include "animeMusicPlayer/base/_playlistSideBar.html" %}
+        {% include "animeMusicPlayer/base/_searchBar.html" %}
+        <script type="text/javascript" src="{% static 'js/_searchBar.js' %}"></script>
+    </body>
+</html>

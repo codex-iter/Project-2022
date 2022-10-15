@@ -1,0 +1,15 @@
+.iconSideBar {
+  left: 0px;
+  top: 0px;
+  font-family: 'Lato', sans-serif;
+  position: absolute;
+  width: 5vw;
+  height: 90vh;
+  border-radius: 0 20px 20px 0;
+  background-color: transparent;
+  box-shadow: 0 0 25px #313131;
+ }
+
+.icon {
+  margin: 6px;
+  padding-bottom: 115px; }

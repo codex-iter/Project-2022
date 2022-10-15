@@ -1,0 +1,8 @@
+{% load static %}
+<form class="searchBarForm" method="POST">
+    {% csrf_token %}
+    <input type="text" id="trackName" name="trackName" placeholder="search for song" class="searchBar">
+    <input type="submit" class="searchIcon" value="">
+</form>
+
+<audio src="" id="audio"></audio>
