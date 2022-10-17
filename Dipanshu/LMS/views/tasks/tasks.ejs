@@ -1,0 +1,130 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link rel="icon" href="../static/logo.png" type="image/icon type" />
+    <link rel="stylesheet" href="./tasks.css">
+    <title>ULearn Tasks</title>
+</head>
+
+<body>
+    <!-- header -->
+    <%- include('header.ejs') %>
+
+        <main>
+            <div class="container px790" style="margin-top: 5%;">
+                <h1>Course Lectures</h1>
+                <h2 style="font-weight: 500;">Available Lectures: <strong>
+                        <% a=0; %>
+                            <%- user.completed.forEach(value=> { a+=1 }); %>
+                                <%= a; %>
+                    </strong></h2>
+                <h2 style="font-weight: 500;">Lectures Completed: <strong>
+                        <% a=0; %>
+                            <%- user.completed.forEach(value=> { if(value) {a+=1} }); %>
+                                <%= a; %>
+                    </strong></h2>
+            </div>
+
+            <div class="container px790">
+                <div class="box" id="box1" onclick="task1()">
+                    <div class="row" style="align-items: center; ">
+                        <span>
+
+                            <% if(user.completed[0]) { %>
+                                <img src="../static/true.png" alt=""
+                                    style="height: 2em; border-radius: 50%; margin-right: 1em;">
+                                <% } else { %>
+                                    <div src="" alt=""
+                                        style="height: 2em; width: 2em; border-radius: 50%; margin-right: 1em; border: 5px solid var(--grey-200);">
+                                    </div>
+                                    <% } %>
+                        </span>
+                        <p>Lecture 1: Introduction to HTML</p>
+                    </div>
+                </div>
+                <div class="box" id="box2" onclick="task2()">
+                    <div class="row" style="align-items: center; ">
+                        <span>
+
+                            <% if(user.completed[1]) { %>
+                                <img src="../static/true.png" alt=""
+                                    style="height: 2em; border-radius: 50%; margin-right: 1em;">
+                                <% } else { %>
+                                    <div src="" alt=""
+                                        style="height: 2em; width: 2em; border-radius: 50%; margin-right: 1em; border: 5px solid var(--grey-200);">
+                                    </div>
+                                    <% } %>
+                        </span>
+                        <p>Lecture 2: Introduction to CSS</p>
+                    </div>
+                </div>
+                <div class="box" id="box3" onclick="task3()">
+                    <div class="row" style="align-items: center; ">
+                        <span>
+
+                            <% if(user.completed[2]) { %>
+                                <img src="../static/true.png" alt=""
+                                    style="height: 2em; border-radius: 50%; margin-right: 1em;">
+                                <% } else { %>
+                                    <div src="" alt=""
+                                        style="height: 2em; width: 2em; border-radius: 50%; margin-right: 1em; border: 5px solid var(--grey-200);">
+                                    </div>
+                                    <% } %>
+                        </span>
+                        <p>Lecture 3: Introduction to JavaScript</p>
+                    </div>
+                </div>
+
+            </div>
+        </main>
+        <!-- footer -->
+        <%- include('footer.ejs') %>
+
+</body>
+<style>
+    /* footer {
+        height: fit-content;
+        position: static;
+    }
+
+    @media (min-height:700px) {
+        footer {
+            position: absolute;
+            bottom: 0;
+            left: 30%;
+        }
+    } */
+
+    @media (min-height: 850px) {
+        footer {
+            position: absolute;
+            bottom: 0;
+            width: 100%;
+        }
+    }
+
+    .container {
+        padding-top: 50px;
+    }
+
+    .row {
+        display: flex;
+    }
+</style>
+<script>
+    function task1() {
+        window.location.href = '/task/1'
+    }
+    function task2() {
+        window.location.href = '/task/2'
+    }
+    function task3() {
+        window.location.href = '/task/3'
+    }
+</script>
+
+</html>

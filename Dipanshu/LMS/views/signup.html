@@ -1,0 +1,186 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link rel="icon" href="./static/logo.png" type="image/icon type" />
+    <link rel="stylesheet" href="styles.css">
+    <title>ULearn</title>
+</head>
+
+<style>
+    body {
+        max-width: 100%;
+    }
+
+    .sign-in:hover {
+        background-color: var(--blue-200);
+        color: #fff;
+    }
+
+    input {
+        border: none;
+        border-radius: 2pt;
+        outline: none;
+        padding: 0px 0.5em;
+    }
+
+    main .container {
+        width: 100%;
+        max-width: 400px;
+    }
+
+    @media (max-width:400px) {
+        .bg-library-full {
+            background: #000;
+        }
+    }
+
+    @media (max-height:500px) {
+        footer {
+            position: static;
+
+        }
+    }
+</style>
+
+<body class="bg-library-full">
+    <header>
+        <button class="no-border no-background title noselect" onclick="window.location.href='/';">
+            <h1 class="font-white">ULearn</h1>
+        </button>
+
+        <button class="btn-large sign-in" onclick="window.location.href='/login'">
+            <h3>Sign In</h3>
+        </button>
+    </header>
+    <main>
+        <div class="full-container">
+            <div class="container">
+                <form>
+                    <!-- pfp -->
+
+                    <div class="row">
+                        <label for="username">Enter username: <br></label>
+                        <input type="text" name="username" id="username">
+                        <div class="username error"></div>
+                    </div>
+                    <div class="row">
+                        <label for="email">Enter email: <br></label>
+                        <input type="email" name="email" id="email">
+                        <div class="email error"></div>
+                    </div>
+                    <div class="row">
+                        <label for="password">Enter Password: <br></label>
+                        <input type="password" name="password" id="passwordid">
+                        <div class="password error"></div>
+                    </div>
+                    <div class="row">
+                        <button type="submit" class="btn-large register">
+                            <h3>Sign Up</h3>
+                        </button>
+                    </div>
+                </form>
+
+                <!-- <form action=""> -->
+                <!-- username -->
+
+                <!-- mail -->
+
+                <!-- password -->
+
+                <!-- cnf password -->
+
+                <!-- SUBMIT BTN -->
+                <!-- </form> -->
+
+
+            </div>
+        </div>
+    </main>
+    <footer class="bg-dark">
+        <div class="full-container">
+            <div class="container">
+                <div class="row">
+                    <a href="https://github.com/dipanshu-m" target="_blank">
+                        <p>Github Repository</p>
+                    </a>
+                    <a href="mailto:d1p@duck.com">
+                        <p>Contact</p>
+                    </a>
+                </div>
+                <div class="rightbottom">
+                    <p>
+                        Made with &#10084;&#65039; by Dipanshu
+                    </p>
+                    <p>
+                        ULearn &copy; 2022
+                    </p>
+
+                </div>
+            </div>
+        </div>
+    </footer>
+</body>
+<script>
+    const form = document.querySelector('form');
+    // const pfpError = document.querySelector('.pfp.error');
+    const usernameError = document.querySelector('.username.error');
+    const emailError = document.querySelector('.email.error');
+    const passswordError = document.querySelector('.password.error');
+    const cnfpassswordError = document.querySelector('.cnfpassword.error');
+
+    form.email.value = sessionStorage.getItem("mail");
+
+    form.addEventListener('submit', async (e) => {
+        e.preventDefault();
+        usernameError.textContent = '';
+        emailError.textContent = '';
+        passswordError.textContent = '';
+        // cnfpassswordError.textContent = '';
+
+        //get the values
+        const uname = form.username.value;
+        const mail = form.email.value;
+        const pass = form.password.value;
+        // const cnfpass = form.cnfpassword.value;
+        // if (pass !== cnfpass) {
+        //     cnfpassswordError.textContent = 'Passwords not same. Try again'
+        // }
+        // console.log("img: "+form.pfp.value);
+
+        // const length = uname.length + mail.length + pass.length + img.length;
+        // console.log(length);
+        try {
+            const res = await fetch('/signup', {
+                method: 'post',
+                body: JSON.stringify({ username: uname, email: mail, password: pass}),
+                // headers: {'content-Type': 'multipart/form-data; boundary=--------------------------864551082369833599971711', 'content-length': '1024*1024*5*2'}
+                // headers: { 'Content-Type': 'multipart/form-data boundary=AaB03x --AaB03x Content-Disposition: form-data; name="username" --AaB03x Content-Disposition: form-data; name="email" --AaB03x Content-Disposition: form-data; name="password" --AaB03x Content-Disposition: form-data; name="files"; Content-Type: image/jpeg--AaB03x--' }
+                // headers: {'Content-Type': undefined}
+                headers: { 'Content-Type': 'application/json' }
+                //need help here for setting the boundaries
+            });
+            const data = await res.json();
+            // console.log(data.errors.username);
+            // console.log(data);
+
+            if (data.errors) {
+                usernameError.textContent = data.errors.username;
+                emailError.textContent = data.errors.email;
+                passswordError.textContent = data.errors.password;
+            }
+            console.log(data.username);
+            if (data.username) {
+                location.assign('/signup/img')
+            }
+        }
+        catch (err) {
+            console.log(err);
+        }
+    })
+</script>
+
+</html>

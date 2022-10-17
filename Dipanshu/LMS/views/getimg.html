@@ -1,0 +1,716 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link rel="icon"
+        href="https://firebasestorage.googleapis.com/v0/b/ulearn-lms-fe316.appspot.com/o/logo.png?alt=media&token=17f4c56f-950f-4baa-963c-68177adf9bb2"
+        type="image/icon type" />
+    <title>ULearn</title>
+</head>
+
+<style>
+    main {
+        max-width: 100%;
+    }
+    
+    .sign-in:hover {
+        background-color: green;
+        color: #fff;
+    }
+
+    input {
+        border: none;
+        border-radius: 2pt;
+        outline: none;
+        padding: 0px 0.5em;
+    }
+
+    main .container {
+        width: 100%;
+        max-width: 400px;
+    }
+
+    body {
+        background: var(--blue-200);
+    }
+
+
+    @media (max-height:500px) {
+        footer {
+            position: static;
+
+        }
+    }
+</style>
+
+<style>
+    :root {
+        /* fonts */
+        --font--default: sans-serif;
+
+        /* text sizes */
+
+        --h1_small: 1.1rem;
+        --h1_medium: 1.5rem;
+        --h1_large: 2.5rem;
+
+        --h2_small: 0.9rem;
+        --h2_medium: 1.1rem;
+        --h2_large: 1.8rem;
+
+        --h3_small: 0.7rem;
+        --h3-medium: 0.9rem;
+        --h3_large: 1.5rem;
+
+        /* colours */
+        --grey-dark: #f2f2f2;
+        --grey-100: #f5f7fa;
+
+        --blue-100: #1a4dca;
+        --blue-200: #2d69ff;
+
+        --green-100: rgb(61, 173, 76);
+        --green-200: rgb(62, 197, 78);
+
+        /* --red-100:  */
+        --red-100: rgb(202, 7, 7);
+        --red-200: rgb(221, 0, 0);
+
+        --pink-200: #FFBEC2;
+        --pink--300: #FDE7E6;
+
+        /* margin */
+        --external: 1em;
+    }
+
+    * {
+        font-family: var(--font--default);
+        padding: 0;
+        margin: 0;
+        box-sizing: border-box;
+    }
+
+    html {
+        position: relative;
+        min-height: 100%;
+    }
+
+    h1 {
+        font-size: var(--h1_small);
+    }
+
+    h2 {
+        font-size: var(--h2_small);
+    }
+
+    h3 {
+        font-size: var(--h3_small);
+    }
+
+    @media (min-width: 400px) {
+        h1 {
+            font-size: var(--h1_medium);
+        }
+
+        h2 {
+            font-size: var(--h2_medium);
+        }
+
+        h3 {
+            font-size: var(--h3-medium);
+        }
+    }
+
+    @media (min-width: 700px) {
+        h1 {
+            font-size: var(--h1_large);
+        }
+
+        h2 {
+            font-size: var(--h2_large);
+        }
+    }
+
+    .btn-large {
+        padding: 0.5em 1em;
+    }
+
+    a {
+        text-decoration: none;
+        color: inherit;
+    }
+
+    a:hover * {
+        text-decoration: underline;
+    }
+
+    button *,
+    a * {
+        cursor: pointer;
+    }
+
+    /* colors */
+    .bg-register {
+        background: url('./static/register.jpg');
+
+        /* background-repeat: no-repeat; */
+        /* box-shadow: inset 0px 0px 80vw 20vw rgba(0, 0, 0, 0.4); */
+    }
+
+    .bg-library {
+        background: url('./static/background.jpg');
+        /* background-repeat: no-repeat; */
+        box-shadow: inset 0px 0px 80vw 20vw rgba(0, 0, 0, 0.4);
+    }
+
+    .bg-library-full {
+        background: url('./static/background.jpg');
+        height: 100vh;
+        width: 100vw;
+        /* background-repeat: no-repeat; */
+        box-shadow: inset 0px 0px 80vw 20vw rgba(0, 0, 0, 0.4);
+    }
+
+    .font-white,
+    .bg-library-full,
+    .bg-library {
+        color: #fff;
+    }
+
+    .error {
+        /* font-size: var(--h2_medium); */
+        color: var(--red-100);
+        font-weight: 500;
+    }
+
+    .input {
+        background-color: #fff;
+        color: #000;
+    }
+
+    header {
+        display: flex;
+        justify-content: space-between;
+        align-items: center;
+        padding: var(--external) 2em;
+        z-index: 1;
+    }
+
+    .fixed {
+        position: fixed;
+        width: 100%;
+    }
+
+    .noselect {
+        -webkit-touch-callout: none;
+        /* iOS Safari */
+        -webkit-user-select: none;
+        /* Safari */
+        -khtml-user-select: none;
+        /* Konqueror HTML */
+        -moz-user-select: none;
+        /* Old versions of Firefox */
+        -ms-user-select: none;
+        /* Internet Explorer/Edge */
+        user-select: none;
+        /* Non-prefixed version, currently supported by Chrome, Edge, Opera and Firefox */
+    }
+
+    .no-background {
+        background-color: transparent;
+    }
+
+    .no-border {
+        border: none;
+    }
+
+    button {
+        cursor: pointer;
+    }
+
+    .title * {
+        display: inline;
+    }
+
+    .menu {
+        height: var(--h1_small);
+        width: var(--h1_small);
+        cursor: pointer;
+        z-index: 3;
+        filter: invert(1) brightness(1);
+    }
+
+    .full-auth {
+        display: none;
+    }
+
+    .fullscreen {
+        position: fixed;
+        width: 100%;
+        height: 100%;
+        top: 3em;
+        background: rgba(0, 0, 0, 0.4);
+        z-index: 1;
+    }
+
+    .toggle {
+        width: 100%;
+        display: flex;
+        position: absolute;
+        z-index: 2;
+    }
+
+    .margin-ext {
+        margin: var(--external);
+    }
+
+    .toggle>button {
+        /* display: inline-block; */
+        width: 50%;
+    }
+
+    .hide {
+        display: none;
+    }
+
+    @media (min-width: 500px) {
+        .menu {
+            display: none;
+        }
+
+        .full-auth {
+            display: inline-block;
+        }
+
+        .fullscreen,
+        .toggle {
+            display: none;
+        }
+    }
+
+    .bg-dark {
+        background: rgba(0, 0, 0, 0.4);
+    }
+
+    .bg-white {
+        background: #fff;
+    }
+
+    main .container {
+        margin: auto;
+        width: 90%;
+        max-width: 35em;
+        border-radius: 8pt;
+    }
+
+    .border {
+        border: 1px solid #000
+    }
+
+    main .container>h1 {
+        margin-top: 5%;
+    }
+
+    main .container>h2 {
+        margin-top: 2%;
+    }
+
+    main .container>p {
+        margin-top: 1%;
+    }
+
+    form .row,
+    main .container>form,
+    main .container>span,
+    main .container>div {
+        margin-top: 5%;
+    }
+
+    .full-container {
+        padding: 2em 0px;
+    }
+
+    main .container {
+        padding: 1em 1em;
+    }
+
+    .type-1 {
+        background: var(--grey-100);
+    }
+
+    .input>* {
+        display: block;
+    }
+
+    .input {
+        transition: all 0.5s;
+        border: solid 1px black;
+        width: 70%;
+    }
+
+    input {
+        width: 100%;
+        height: 2em;
+    }
+
+    .form {
+        width: 100%;
+        max-width: 500px;
+        display: flex;
+    }
+
+    .form-control {
+        height: 2.5em;
+        transform: translateY(0.5em);
+        transform-origin: 0 0;
+        background: transparent;
+        outline: none;
+        border: none;
+    }
+
+    .bg-red {
+        background: var(--red-100);
+    }
+
+    .hover-lred:hover {
+        background: var(--red-200);
+    }
+
+    .get-started {
+        height: 3em;
+        border: none;
+        border: solid 1px black;
+    }
+
+    .form-control {
+        padding: 0.5em 1em;
+    }
+
+    .form-control::placeholder {
+        color: transparent;
+        -webkit-touch-callout: none;
+        /* iOS Safari */
+        -webkit-user-select: none;
+        /* Safari */
+        -khtml-user-select: none;
+        /* Konqueror HTML */
+        -moz-user-select: none;
+        /* Old versions of Firefox */
+        -ms-user-select: none;
+        /* Internet Explorer/Edge */
+        user-select: none;
+        /* Non-prefixed version, currently supported by Chrome, Edge, Opera and Firefox */
+    }
+
+    .form-label {
+        height: 0px;
+        padding: 0px 0.8em;
+        transform: translateY(-1.2em);
+        transform-origin: 0 0;
+    }
+
+    .form-label * {
+        font-weight: 400;
+        cursor: text;
+    }
+
+    .form-control *,
+    .get-started * {
+        font-size: 0.9em;
+    }
+
+    .form-control:focus-within+.form-label *,
+    .form-control:not(:placeholder-shown)+.form-label * {
+        font-weight: 700;
+    }
+
+    /* animate the get started btn */
+    .input,
+    .form-label {
+        transition: all 0.25s;
+    }
+
+    .form-control:not(:placeholder-shown)+.form-label,
+    .form-control:focus+.form-label {
+        padding-left: 1em;
+        transform: translateY(-1.9em) scale(0.8);
+        transform-origin: 0 0;
+    }
+
+    .row a {
+        display: inline-block;
+        text-decoration: none;
+        width: 40%;
+    }
+
+    footer .row * {
+        margin-bottom: 0em;
+    }
+
+    footer .container {
+        margin: auto;
+        width: 90%;
+        max-width: 30em;
+    }
+
+    /* login.html */
+    .checkbox {
+        display: flex;
+        align-items: flex-end;
+    }
+
+    input.checkboxbtn {
+        height: var(--h3-medium);
+        width: var(--h3-medium);
+    }
+
+    .flex {
+        display: flex;
+    }
+
+    .space-between {
+        justify-content: space-between;
+    }
+
+    footer {
+        height: 12em;
+        position: absolute;
+        width: 100%;
+        bottom: 0;
+        overflow: hidden;
+    }
+
+    .paddingforfooter {
+        /* ca */
+        min-height: 5em;
+    }
+
+    /* dashboard */
+    #image {
+        border-radius: 50%;
+        border: black 1px solid;
+        width: 100px;
+        height: 100px;
+        overflow: hidden;
+    }
+
+    ul li {
+        list-style: none;
+    }
+</style>
+
+<style>
+    main {
+        max-width: 100%;
+    }
+
+    input {
+        border: none;
+        border-radius: 2pt;
+        outline: none;
+        padding: 0px 0.5em;
+    }
+
+    main .container {
+        width: 100%;
+        max-width: 400px;
+    }
+
+    @media (max-width:400px) {
+
+        body,
+        footer {
+            background: #fff;
+        }
+
+        .font-white {
+            color: #000;
+        }
+    }
+
+    @media (max-height:500px) {
+        footer {
+            position: static;
+        }
+    }
+
+    .edit {
+        cursor: default;
+    }
+
+    .edit:hover {
+        text-decoration: underline;
+    }
+
+    .arrow {
+        border: solid black;
+        border-width: 0 3px 3px 0;
+        display: inline-block;
+        padding: 3px;
+    }
+
+    .right {
+        transform: rotate(-45deg);
+        -webkit-transform: rotate(-45deg);
+    }
+</style>
+
+<body>
+    <header>
+        <h2 class="no-border no-background title noselect font-white">ULearn</h2>
+    </header>
+    <main>
+
+        <!-- <div class="full-container">
+            <div class="container">
+                
+            </div>
+        </div> -->
+
+        <div class="full-container" style="margin-bottom: 10em;">
+            <div class="container bg-white" style="display: flex; flex-direction: column; align-items: center;">
+                <h1 style="text-align: center; margin-top: 1em;">Upload a profile picture</h1>
+                <input type="file" accept="image/*" id="photo" style="display: none;">
+                <div style="margin-top: 1em;"><img
+                        src="https://firebasestorage.googleapis.com/v0/b/ulearn-lms-fe316.appspot.com/o/default-profile.png?alt=media&token=61d777be-9b4b-4262-8228-6aafdf0f5c39"
+                        alt="" id="image">
+                </div>
+                <div style="display: flex; justify-content: space-between; width: 40%;">
+                    <h3 style="display: inline;" onclick="openFiles();" class="edit"
+                        style=" margin-bottom: 1em; padding-left: 7em;" id="openfilexplorer">Upload</h3>
+                    <h3 style="display: inline; max-width: fit-content;" class="edit" onclick="uploadImage();">Preview
+                    </h3>
+                </div>
+
+                <p class="image error"></p>
+
+                <div
+                    style="margin-bottom: 4em; display: flex; justify-content: space-between; align-items: center; width: 90%;">
+                    <button class="btn-large" style="white-space: nowrap;" onclick="setProfilePicture()">Set as Profile
+                        Picture</button>
+                    <a style="white-space: nowrap;" onclick="resettodefaultsandcontinue()" class="edit">Skip for now <i
+                            class="arrow right"></i></a>
+                </div>
+            </div>
+        </div>
+
+
+        <div class="paddingforfooter "></div>
+        <footer class="bg-white">
+            <div class="full-container">
+                <div class="container">
+                    <div class="row">
+                        <a href="https://github.com/dipanshu-m" target="_blank">
+                            <p>Github Repository</p>
+                        </a>
+                        <a href="mailto:d1p@duck.com">
+                            <p>Contact</p>
+                        </a>
+                    </div>
+                    <div class="rightbottom">
+                        <p>
+                            Made with &#10084;&#65039; by Dipanshu
+                        </p>
+                        <p>
+                            ULearn &copy; 2022
+                        </p>
+
+                    </div>
+                </div>
+            </div>
+        </footer>
+</body>
+
+</html>
+<script src="https://www.gstatic.com/firebasejs/7.7.0/firebase-app.js"></script>
+<script src="https://www.gstatic.com/firebasejs/7.7.0/firebase-storage.js"></script>
+<script>
+    const defualt = "https://firebasestorage.googleapis.com/v0/b/ulearn-lms-fe316.appspot.com/o/default-profile.png?alt=media&token=61d777be-9b4b-4262-8228-6aafdf0f5c39";
+    const imageError = document.querySelector('.image.error');
+    imageError.textContent = "";
+
+    async function resettodefaultsandcontinue() {
+        try {
+            const res = await fetch('/signup/img', {
+                method: 'post',
+                body: JSON.stringify({ image: defualt }),
+                headers: { 'Content-Type': 'application/json' }
+            });
+            window.location.href = '/tasks';
+        }
+        catch (err) {
+            console.log(err);
+        }
+    }
+    function openFiles() {
+        document.getElementById("photo").click();
+        document.getElementById("openfilexplorer").textContent = 'Change';
+
+    }
+
+    async function setProfilePicture() {
+        uploadImage('submit');
+    }
+    const firebaseConfig = {
+        apiKey: "AIzaSyAY2I1_xuxITmvZFIvTC6gTB5bQrAFU_9w",
+        authDomain: "ulearn-lms-fe316.firebaseapp.com",
+        databaseURL: "https://ulearn-lms-fe316-default-rtdb.firebaseio.com",
+        projectId: "ulearn-lms-fe316",
+        storageBucket: "ulearn-lms-fe316.appspot.com",
+        messagingSenderId: "1097479264931",
+        appId: "1:1097479264931:web:1f56adc064dcdd3cdbfd16"
+    };
+
+    firebase.initializeApp(firebaseConfig);
+    // console.log(firebase);
+    async function uploadImage(type) {
+        try {
+            imageError.textContent = "";
+            const ref = firebase.storage().ref();
+            const file = document.querySelector("#photo").files[0];
+            // console.log(file);
+            if (file === undefined) {
+                throw 1;
+            }
+            const name = new Date() + '-' + file.name;
+            const metadata = {
+                contentType: file.type
+            }
+
+            const task = ref.child(name).put(file, metadata)
+
+            task
+                .then(snapshot => snapshot.ref.getDownloadURL())
+                .then(async url => {
+                    // alert("uploaded successfully");
+                    const imageelement = document.querySelector('#image');
+                    imageelement.src = url;
+                    if (type === 'submit') {
+                        try {
+                            const res = await fetch('/signup/img', {
+                                method: 'post',
+                                body: JSON.stringify({ image: url }),
+                                headers: { 'Content-Type': 'application/json' }
+                            });
+                            window.location.href = '/tasks';
+                        }
+                        catch (err) {
+                            console.log(err);
+                        }
+                    }
+                })
+
+        }
+        catch (e) {
+            if (e == 1) {
+                imageError.textContent = "Enter an image! "
+            }
+            console.log("error code: " + e);
+        }
+    }
+</script>
+
+</html>

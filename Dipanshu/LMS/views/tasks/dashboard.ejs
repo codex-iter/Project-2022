@@ -1,0 +1,334 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link rel="icon" href="../static/logo.png" type="image/icon type" />
+    <link rel="stylesheet" href="../styles.css" type="text/css" />
+
+    <title>ULearn Dashboard</title>
+</head>
+
+<style>
+    input {
+        border: 1px black solid;
+        outline: none;
+        border-radius: 2pt;
+        padding: 0px 0.5em;
+    }
+
+    li {
+        margin-top: 1em;
+    }
+
+    input {
+        width: 60%;
+    }
+
+    input:focus-within {
+        border-color: var(--blue-100);
+        border-width: 2px;
+    }
+
+    .edit {
+        cursor: default;
+
+    }
+
+    .edit:hover {
+        text-decoration: underline;
+    }
+</style>
+
+<body>
+    <header>
+        <button class="no-border no-background title noselect" onclick="window.location.href='/tasks'">
+            <h1>ULearn</h1>
+        </button>
+
+        <span class="container">
+            <img src="../static/outline_menu_black_24dp.png" style="filter: invert(1) brightness(0); " alt="menu"
+                class="menu noselect" onclick="showMenu()">
+            <span class="full-auth">
+                <button class="btn-large sign-out full-auth">
+                    <h3 onclick="logout()">Log Out</h3>
+                </button>
+                <!-- <button class="btn-large delete-account full-auth">
+                    <h3>Delete Account</h3>
+                </button> -->
+            </span>
+        </span>
+    </header>
+    <main>
+        <div class="fullscreen hide">
+            <div class="toggle hide">
+                <button class="btn-large no-border sign-out">
+                    <h3 onclick="logout()">Log Out</h3>
+                </button>
+                <!-- <button class="btn-large no-border">
+                    <h3>Delete Account</h3>
+                </button> -->
+            </div>
+        </div>
+        <div class="toggle hide">
+            <button class="btn-large sign-out no-border">
+                <h3>Log Out</h3>
+            </button>
+            <!-- <button class="btn-large delete-account no-border">
+                <h3>Delete Account</h3>
+            </button> -->
+        </div>
+        <div class="container flex space-between">
+            <span>
+                <img src="<%= user.image %>" alt="" id="imagepreview"
+                    style="width: 100px; height: 100px; border: 1px solid black; border-radius: 50%; overflow: hidden;">
+                <input accept="image/*" type="file" id="photo" alt="" style="display: none;">
+                <h3 class="edit" style="width: fit-content; margin: auto;" onclick="openFiles()">Edit</h3>
+                <!-- input image -->
+            </span>
+            <div class="" style="width: 60%;">
+                <h1>
+                    <%= user.fullname %>
+                </h1>
+                <h3>
+                    <%= user.email %>
+                </h3>
+            </div>
+        </div>
+        <div class="container">
+            <h1>Account</h1>
+            <ul>
+                <form>
+                    <li class="flex space-between">
+
+                        <p>Full name
+                        </p>
+                        <input type="text" value="<%= user.fullname %>" id="formfullname" name="">
+                        <!-- input fullname -->
+                    </li>
+                    <li class="flex space-between">
+
+                        <p>Username*</p>
+                        <input type="text" name="" value="<%= user.username %>" id="formusername" required>
+                        <!-- input username -->
+                    </li>
+                    <li class="flex space-between">
+
+                        <p>Email*</p>
+                        <input type="email" name="" value="<%= user.email %>" id="formemail" required>
+                        <!-- input email -->
+                    </li>
+                    <li class="flex space-between">
+
+                        <p>Password</p>
+                        <input type="password" name="" value="" id="formpassword">
+                        <!-- input password -->
+                    </li>
+                    <li>
+                        <button class="btn-large savechanges" type="submit" style="margin-top: 2em;">
+                            <h3>Update Profile</h3>
+                        </button>
+                    </li>
+                </form>
+            </ul>
+            <!-- <%= user %> -->
+        </div>
+    </main>
+    <div class="paddingforfooter"></div>
+    <footer>
+        <div class="full-container ">
+            <div class="container red">
+                <div class="row1">
+                    <a href="https://github.com/dipanshu-m" target="_blank">
+                        <p>Github Repository</p>
+                    </a>
+                    <a href="mailto:d1p@duck.com">
+                        <p>Contact</p>
+                    </a>
+                </div>
+                <div class="rightbottom">
+                    <p>
+                        Made with &#10084;&#65039; by Dipanshu
+                    </p>
+                    <p>
+                        ULearn &copy; 2022
+                    </p>
+                </div>
+            </div>
+        </div>
+    </footer>
+</body>
+<!-- <script src="https://cdnjs.cloudflare.com/ajax/libs/axios/0.26.0/axios.min.js"></script> -->
+<script src="https://www.gstatic.com/firebasejs/7.7.0/firebase-app.js"></script>
+<script src="https://www.gstatic.com/firebasejs/7.7.0/firebase-storage.js"></script>
+<script>
+    const firebaseConfig = {
+        apiKey: "AIzaSyAY2I1_xuxITmvZFIvTC6gTB5bQrAFU_9w",
+        authDomain: "ulearn-lms-fe316.firebaseapp.com",
+        databaseURL: "https://ulearn-lms-fe316-default-rtdb.firebaseio.com",
+        projectId: "ulearn-lms-fe316",
+        storageBucket: "ulearn-lms-fe316.appspot.com",
+        messagingSenderId: "1097479264931",
+        appId: "1:1097479264931:web:1f56adc064dcdd3cdbfd16"
+    };
+
+    firebase.initializeApp(firebaseConfig);
+
+    function showMenu() {
+        document.querySelector('.toggle').classList.toggle('hide');
+        document.querySelector('.fullscreen').classList.toggle('hide');
+
+        // when modal opens
+        if (!document.querySelector('.toggle').classList.contains("hide")) {
+            // Disable scroll
+            document.querySelector('body').style.overflow = "hidden";
+        } else {
+            // Enable scroll
+            document.querySelector('body').style.overflow = "auto";
+        }
+    }
+
+    // console.log('email' + email);
+    function backToTop() {
+        window.scrollTo(0, 0);
+    }
+
+    function logout() {
+        window.location.href = '/logout';
+    }
+
+    // function edit() {
+
+    // }
+    //
+
+    const image = document.getElementById('photo');
+    const imgPreview = document.getElementById('imagepreview');
+    const fullname = document.getElementById('formfullname');
+    const username = document.getElementById('formusername');
+    const password = document.getElementById('formpassword');
+    const email = document.getElementById('formemail');
+    const form = document.querySelector('form');
+
+    var img = imgPreview.src;
+    // console.log("1+"+img);
+
+    //preview image after getting selected
+    image.onchange = () => {
+        imgPreview.src = URL.createObjectURL(image.files[0]);
+        // console.log(image.files[0]);
+        // img = image.files[0];
+        // console.log(img);
+    }
+
+    form.addEventListener('submit', async (e) => {
+        e.preventDefault();
+        username.style.border = "1px solid black";
+        email.style.border = "1px solid black";
+        password.style.border = "1px solid black";
+        try {
+            // console.log(image.files[0]);
+            if ((image.files[0])) {
+                // await uploadImage();
+
+                // console.log("2+"+image.files[0]);
+                const ref = await firebase.storage().ref();
+                const file = image.files[0];
+                const name = new Date() + '-' + file.name;
+                const metadata = {
+                    contentType: file.type
+                }
+
+                const task = ref.child(name).put(file, metadata)
+                await task
+                    .then(snapshot => snapshot.ref.getDownloadURL())
+                    .then(async url => {
+                        img = url;
+
+                    })
+
+                // }
+                // catch (e) {
+                //     console.log("err    ");
+                // }
+            }
+
+            const res = await fetch('/dashboard', {
+                method: 'put',
+                body: JSON.stringify({ image: img, fullname: fullname.value, username: username.value, email: email.value, password: password.value }),
+                headers: { 'Content-Type': 'application/json' }
+                //need help here for setting the boundaries
+            });
+            const data = await res.json();
+            // console.log(data.errors.username);
+            // console.log(data);
+            console.log(data);
+            if (data.errors) {
+                // usernameError.textContent = data.errors.username;
+                // emailError.textContent = data.errors.email;
+                // passswordError.textContent = data.errors.password;
+                if (data.errors.username != "") {
+                    username.style.border = "2px solid red"
+                }
+                if (data.errors.email != "") {
+                    email.style.border = "2px solid red"
+                }
+                if (data.errors.password != "") {
+                    password.style.border = "2px solid red"
+                }
+            }
+            // if (data.username) {
+            //     location.assign('/tasks')
+            // }
+        }
+        catch (err) {
+            console.log("erridk what happneed");
+        }
+    }, false)
+
+
+    const defaultimg = "https://firebasestorage.googleapis.com/v0/b/ulearn-lms-fe316.appspot.com/o/default-profile.png?alt=media&token=61d777be-9b4b-4262-8228-6aafdf0f5c39";
+    // const imageError = document.querySelector('.image.error');
+    // imageError.textContent = "";
+
+    // async function resettodefaultsandcontinue() {
+    //     try {
+    //         const res = await fetch('/signup/img', {
+    //             method: 'post',
+    //             body: JSON.stringify({ image: defualt }),
+    //             headers: { 'Content-Type': 'application/json' }
+    //         });
+    //         window.location.href = '/tasks';
+    //     }
+    //     catch (err) {
+    //         console.log(err);
+    //     }
+    // }
+    function openFiles() {
+        document.getElementById("photo").click();
+    }
+
+
+    // console.log(firebase);
+</script>
+<style>
+    .sign-out {
+        background: #ca1d0d;
+        outline: none;
+        color: #fff;
+        /* border: 1px var(--grey-100) solid; */
+        border: none;
+        border-radius: 2pt;
+    }
+
+    .savechanges {
+        background: var(--green-100);
+        color: #fff;
+        outline: none;
+        border: none;
+        border-radius: 2pt;
+    }
+</style>
+</html>
