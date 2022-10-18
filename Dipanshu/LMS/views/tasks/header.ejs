@@ -1,0 +1,160 @@
+<header>
+    <h1 class="mainlogo">ULearn</h1>
+    <div class="menu">
+        <img src="../static/outline_menu_black_24dp.png" alt="Menu" class="menuicon" onclick="toggleMenu()">
+
+        <span class="buttonsheader">
+            <button class="btn-large dashboard">
+                <h3>Dashboard</h3>
+            </button>
+
+            <button class="btn-large logout">
+                <h3>Log Out</h3>
+            </button>
+        </span>
+
+    </div>
+</header>
+
+<div class="fullscreen closed">
+    <div class="modal closed" style="background: red;">
+        <div class="row" style="padding: auto; margin: auto;">
+            <button class="btn-large dashboard">
+                <h3>Dashboard</h3>
+            </button>
+
+            <button class="btn-large logout">
+                <h3>Log Out</h3>
+            </button>
+        </div>
+    </div>
+</div>
+<style>
+    .menuicon {
+        height: var(--h1_small);
+        width: var(--h1_small);
+        cursor: pointer;
+    }
+
+    .fullscreen {
+        top: 0;
+        left: 0;
+        position: fixed;
+        height: 100%;
+        width: 100%;
+        background: rgba(0, 0, 0, 0.8);
+        display: flex;
+    }
+
+    header {
+        position: -webkit-sticky;
+        position: sticky;
+        width: 100%;
+        top: 0;
+        background: #fff;
+        display: flex;
+        padding: 1em 2em;
+        flex-direction: row;
+        justify-content: space-between;
+        align-items: center;
+        height: fit-content;
+        box-shadow:
+            0px 1px 5px 1px rgba(0, 0, 0, 0.2),
+            0px 1px 10px 1px rgba(0, 0, 0, 0.1);
+        margin-bottom: 1em;
+    }
+
+    button,
+    .menuicon {
+        cursor: pointer;
+    }
+
+    .modal {
+        display: contents;
+        margin: auto;
+        position: absolute;
+        overflow: hidden;
+    }
+
+    .modal button {
+        min-width: min-content;
+        width: 100%;
+        margin: 10px 0px 0px;
+    }
+
+    .modal .row {
+        text-align: center;
+        flex-direction: column;
+        width: 80%;
+        /* background: red; */
+    }
+
+    .closed {
+        display: none;
+        overflow: hidden;
+    }
+
+    @media (max-width: 501px) {
+        header .buttonsheader {
+            display: none;
+        }
+
+        header .menuicon {
+            display: initial;
+        }
+    }
+
+    @media (min-width: 500px) {
+        header .menuicon {
+            display: none;
+        }
+
+        header .buttonsheader {
+            display: initial;
+        }
+
+        .fullscreen,
+        .modal {
+            display: none;
+        }
+    }
+</style>
+<script>
+    var modalshowing = false;
+    function toggleMenu() {
+        document.querySelector('.modal').classList.toggle('closed');
+        document.querySelector('.fullscreen').classList.toggle('closed');
+        modalshowing = !modalshowing;
+        // console.log(modalshowing);
+        if (!document.querySelector('.fullscreen').classList.contains("closed")) {
+            // Disable scroll
+            document.querySelector('body').style.overflow = "hidden";
+        } else {
+            // Enable scroll
+            document.querySelector('body').style.overflow = "auto";
+        }
+
+    }
+
+    document.querySelector('.fullscreen').addEventListener('click', (event) => {
+        if (modalshowing) {
+            if (!event.target.closest(".modal")) {
+                toggleMenu();
+            }
+        }
+    });
+
+
+    document.querySelectorAll('.dashboard').forEach(element => {
+        element.addEventListener('click', () => {
+            window.location.href = '/dashboard';
+        })
+    });
+
+    document.querySelectorAll('.logout').forEach(element => {
+        element.addEventListener('click', () => {
+            window.location.href = '/logout';
+        })
+    });
+
+</script>

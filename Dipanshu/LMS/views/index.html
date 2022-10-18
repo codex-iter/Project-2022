@@ -1,0 +1,229 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link rel="icon" href="./static/logo.png" type="image/icon type" />
+    <link rel="stylesheet" href="styles.css">
+    <title>ULearn</title>
+</head>
+<style>
+    .get-started {
+        border-width: 0px 0px 0px 1px;
+        border-radius: 0pt 2pt 2pt 0pt;
+        outline: none;
+    }
+
+    .input {
+        border-width: 0px 1px 0px 0px;
+        border-radius: 2pt 0px 0px 2pt;
+        outline: none;
+    }
+
+    .input:focus-within {
+        border: 1px solid rgb(65, 52, 247);
+    }
+
+    footer {
+        height: fit-content;
+        position: static;
+    }
+
+    @media (min-height:1700px) {
+        footer {
+            position: absolute;
+        }
+    }
+</style>
+
+<body style="background:var(--grey-100)">
+    <header class="fixed">
+        <button class="no-border no-background title noselect" onclick="backToTop()">
+            <h2 id="logoid" class="font-white">ULearn</h2>
+        </button>
+
+        <span class="container">
+            <img src="./static/outline_menu_black_24dp.png" alt="menu" class="menu" onclick="showMenu()">
+            <div class="row">
+                <span class="full-auth">
+                    <button class="btn-large sign-in full-auth">
+                        <h3>Sign In</h3>
+                    </button>
+                    <button class="btn-large register full-auth">
+                        <h3>Register</h3>
+                    </button>
+                </span>
+            </div>
+        </span>
+    </header>
+    <main>
+        <div class="fullscreen hide">
+            <div class="toggle hide">
+                <button class="btn-large sign-in no-border">
+                    <h3>Sign In</h3>
+                </button>
+                <button class="btn-large register no-border">
+                    <h3>Register</h3>
+                </button>
+            </div>
+        </div>
+        <div class="full-container type-2 bg-library">
+            <div class="container" style="padding-top: 10em; padding-bottom: 5em;">
+                <h1>Build a Better version <br>
+                    of Yourself</h1>
+                <h2 style="padding-top: 0.5em">
+                    Start Learning something new now <br>
+                    For free!
+                </h2>
+
+                <form onsubmit="mailsubmission1()" class="form" action="/signup" method="get">
+                    <span class="input">
+                        <input type="email" name="mail_1" id="mail_1" placeholder="Enter email" class="form-control"
+                            required>
+                        <label for="mail_1" class="form-label noselect">
+                            <h3>Enter email </h3>
+                        </label>
+                    </span>
+                    <button type="submit" class="get-started btn-large font-white">
+                        <h2>Get Started</h2>
+                    </button>
+                </form>
+            </div>
+        </div>
+
+        <!-- <div class="full-container bg-white">
+            <div class="container border type-1" style="padding-top: 2em; padding-bottom: 2em;">
+                <h2 style="padding-bottom: 1em;">Dont be the person who says yes <br>
+                    with his mouth but no, with his
+                    action!</h2>
+                    <img src="./static/procastination.png" alt="procastination">
+            </div>
+        </div> -->
+
+        <div class="full-container type-1">
+            <div class="container bg-white border" style="padding-top: 2em; padding-bottom: 2em;">
+                <h2>Enabling Transformation</h2>
+                <p>Your learning experience is grounded in cutting <br>
+                    edge cognitive science. Our approach follows <br>
+                    three key principles:</p>
+                <p>
+                    <strong>Experience</strong>
+                <p>
+                    Learn new knowledge and skills in a variety of ways, <br>
+                    from engaging video lectures and dynamic graphics <br>
+                    to data visualizations and interactive elements.
+                </p>
+                <p>
+                    <strong>Practice</strong>
+                </p>
+                <p>
+                    Demonstrating your knowledge is a critical part of <br>
+                    learning courses and programs provide a space <br>
+                    to practice with quizzes, open response <br>
+                    assessments, virtual environments, and more.
+                    <br>
+                </p>
+                <p>
+                    <strong>Apply</strong>
+                </p>
+                <p>
+                    Learning on ULearn transforms how you think and what <br>
+                    you can do, and translates directly into the real world—immediately apply your new capabilities in
+                    the context of your job.
+                    <br>
+                </p>
+            </div>
+        </div>
+
+        <!-- <div class="full-container bg-register">
+            <div class="container">
+                <h2 class="font-white">Stand out of the crowd by <br>
+                    shocasing something new!</h2>
+                
+
+                <form action="" class="form">
+                    <span class="input">
+                        <input type="email" name="mail_2" id="mail_2" placeholder="Enter email" class="form-control">
+                        <label for="mail_2" class="form-label noselect">
+                            <h3>Enter email </h3>
+                        </label>
+                    </span>
+                    <button type="submit" class="get-started btn-large">
+                        <h2>Get Started</h2>
+                    </button>
+                </form>
+            </div>
+
+        </div> -->
+    </main>
+
+    <footer class="bg-register">
+        <div class="full-container">
+            <div class="container">
+                <h2 class="font-white" style="margin-bottom: 1em;">Stand out of the crowd by <br>
+                    shocasing something new!</h2>
+                <!-- get started-form -->
+
+                <form onsubmit="mailsubmission2(e)" class="form" action="/signup" method="get">
+                    <span class="input">
+                        <input type="email" name="mail_2" id="mail_2" placeholder="Enter email" class="form-control"
+                            required>
+                        <label for="mail_2" class="form-label noselect">
+                            <h3>Enter email </h3>
+                        </label>
+                    </span>
+                    <button type="submit" class="get-started btn-large bg-red hover-lred font-white">
+                        <h2>Get Started</h2>
+                    </button>
+                </form>
+            </div>
+
+        </div>
+
+        <div class="full-container font-white">
+            <div class="container">
+                <div class="row">
+                    <a href="https://github.com/dipanshu-m" target="_blank">
+                        <p>Github Repository</p>
+                    </a>
+                    <a href="mailto:d1p@duck.com">
+                        <p>Contact</p>
+                    </a>
+                </div>
+                <div class="rightbottom">
+                    <p>
+                        Made with &#10084;&#65039; by Dipanshu
+                    </p>
+                    <p>
+                        ULearn &copy; 2022
+                    </p>
+
+                </div>
+            </div>
+        </div>
+    </footer>
+</body>
+<script src="./dom.js"></script>
+<script>
+
+    function headercolor() {
+        if (document.documentElement.scrollTop >= 130 || !(document.querySelector('.fullscreen').classList.contains('hide'))) {
+            document.querySelector('header').classList.add('bg-white')
+            document.querySelector('#logoid').classList.remove('font-white')
+            document.querySelector('.menu').style = 'filter: invert(1) brightness(0);';
+        }
+        else {
+            document.querySelector('header').classList.remove('bg-white')
+            document.querySelector('#logoid').classList.add('font-white')
+            document.querySelector('.menu').style = 'filter: invert(1) brightness(1);';
+        }
+    }
+    headercolor();
+    document.addEventListener('scroll', () => {
+        headercolor();
+    })
+</script>
+
+</html>
