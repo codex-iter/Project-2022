@@ -1,4 +1,4 @@
-# Harshit-Run
+# Space-Boom
 -> A basic Java game made using Swing
 <br>
 -> This is an unlimited running game
@@ -8,7 +8,7 @@
 <br>
 
 <div align="center" style="text-align: center">
-    <h6>Running Harshit</h6>
+    <h6>In Game</h6>
     <img src="screenshots/1.png" width="600px"></img> 
 </div>
 
