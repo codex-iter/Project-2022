@@ -1,0 +1,21 @@
+.spinner {
+  margin: 0 auto;
+  width: 250px;
+  height: 250px;
+  border-radius: 50%;
+  background: radial-gradient(farthest-side, #474bff 94%, #0000) top/11.5px
+      11.5px no-repeat,
+    conic-gradient(#0000 30%, #474bff);
+  -webkit-mask: radial-gradient(
+    farthest-side,
+    #0000 calc(100% - 11.5px),
+    #000 0
+  );
+  animation: spinner-c7wet2 0.8s infinite linear;
+}
+
+@keyframes spinner-c7wet2 {
+  100% {
+    transform: rotate(1turn);
+  }
+}
