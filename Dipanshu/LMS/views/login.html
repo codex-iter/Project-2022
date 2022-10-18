@@ -1,0 +1,175 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link rel="icon" href="./static/logo.png" type="image/icon type" />
+    <link rel="stylesheet" href="styles.css">
+    <title>ULearn</title>
+</head>
+<style>
+    main {
+        max-width: 100%;
+        background-color: var(--blue-200);
+    }
+
+    .sign-in:hover {
+        background-color: green;
+        color: #fff;
+    }
+
+    input {
+        border: none;
+        border-radius: 2pt;
+        outline: none;
+        padding: 0px 0.5em;
+    }
+
+    main .container {
+        width: 100%;
+        max-width: 400px;
+    }
+
+    body {
+        background: var(--blue-200);
+    }
+
+    @media (max-width:400px) {
+
+        .full-container,
+        body {
+            background: #000;
+        }
+    }
+
+    @media (max-height:500px) {
+        footer {
+            position: static;
+
+        }
+    }
+</style>
+
+<body id="body" class="font-white">
+    <header>
+        <button class="no-border no-background title noselect" onclick="backToTop()">
+            <h2 class="font-white" onclick="window.location.href='/'">ULearn</h2>
+        </button>
+    </header>
+    <main>
+        <div class="full-container">
+            <div class="container bg-dark" style="padding-bottom: 5em;">
+                <form>
+                    <div class="row">
+                        <label for="email">Enter email: <br></label>
+                        <input type="email" name="email" id="mail">
+                        <div class="email error"></div>
+                    </div>
+                    <div class="row">
+                        <label for="password">Enter Password: <br></label>
+                        <input type="password" name="password" id="passwordid">
+                        <div class="password error"></div>
+                    </div>
+                    <div class="row">
+
+                        <button type="submit" class="btn-large sign-in">
+                            <h3>Sign In</h3>
+                        </button>
+                    </div>
+                </form>
+
+
+                <!-- <div class="flex space-between">
+                    <span class="checkbox">
+                        <input type="checkbox" id="checkboxrememberme" name="RememberMe" value="RememberMe"
+                            class="checkboxbtn">
+                        <label for="RememberMe">
+                            <h3>Remember Me</h3>
+                        </label>
+                    </span>
+                    <span>
+                        <a href="">
+                            <h3>Reset Password</h3>
+                        </a>
+                    </span>
+                </div> -->
+                <span class="flex">
+                    <h3>New to ULearn?</h3>
+                    <a href="/signup" style="text-decoration: underline;">
+                        <h3 style="padding-left: 0.5ch;">Sign Up Now</h3>
+                    </a>
+                </span>
+
+
+            </div>
+        </div>
+    </main>
+    <div class="paddingforfooter"></div>
+    <footer>
+        <div class="full-container">
+            <div class="container">
+                <div class="row">
+                    <a href="https://github.com/dipanshu-m" target="_blank">
+                        <p>Github Repository</p>
+                    </a>
+                    <a href="mailto:d1p@duck.com">
+                        <p>Contact</p>
+                    </a>
+                </div>
+                <div class="rightbottom">
+                    <p>
+                        Made with &#10084;&#65039; by Dipanshu
+                    </p>
+                    <p>
+                        ULearn &copy; 2022
+                    </p>
+
+                </div>
+            </div>
+        </div>
+    </footer>
+</body>
+
+<script>
+    const form = document.querySelector('form');
+    const emailError = document.querySelector('.email.error');
+    const passswordError = document.querySelector('.password.error');
+
+
+    form.addEventListener('submit', async (e) => {
+        e.preventDefault();
+        emailError.textContent = '';
+        passswordError.textContent = '';
+
+        //get the values
+        const mail = form.email.value;
+        const pass = form.password.value;
+        try {
+            const res = await fetch('/login', {
+                method: 'post',
+                body: JSON.stringify({ email: mail, password: pass }),
+                headers: { 'Content-Type': 'application/json' }
+            });
+            const data = await res.json();
+            // console.log(data)
+            // console.log(data.errors.username);
+            console.log(data);
+
+            if (data.errors) {
+                emailError.textContent = data.errors.email;
+                passswordError.textContent = data.errors.password;
+            }
+            console.log(data.email);
+            if (data.user) {
+                location.assign('/tasks')
+            }
+        }
+        catch (err) {
+            console.log(err);
+        }
+    })
+</script>
+
+</html>

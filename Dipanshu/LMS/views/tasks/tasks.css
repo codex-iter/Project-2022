@@ -1,0 +1,171 @@
+:root {
+  /* fonts */
+  --font--default: sans-serif;
+
+  /* text sizes */
+
+  --h1_small: 1.1rem;
+  --h1_medium: 1.5rem;
+  --h1_large: 2.5rem;
+
+  --h2_small: 0.9rem;
+  --h2_medium: 1.1rem;
+  --h2_large: 1.8rem;
+
+  --h3_small: 0.7rem;
+  --h3-medium: 0.9rem;
+  --h3_large: 1.5rem;
+
+  /* colours */
+  --dblue: #0d2129;
+
+  --grey-dark: #f2f2f2;
+  --grey-100: #f5f7fa;
+  --grey-200: #e2e7ed;
+
+  --blue-100: #1a4dca;
+  --blue-200: #2d69ff;
+
+  --green-100: rgb(61, 173, 76);
+  --green-200: rgb(62, 197, 78);
+
+  /* --red-100:  */
+  --red-100: rgb(202, 7, 7);
+  --red-200: rgb(221, 0, 0);
+
+  --grey-100: #a1a8b2;
+  --grey-300: #f3f3f3;
+  --grey-400: #fcfcfc;
+  /* margin */
+  --external: 1em;
+}
+
+* {
+  font-family: var(--font--default);
+  padding: 0;
+  margin: 0;
+  box-sizing: border-box;
+}
+
+html {
+  position: relative;
+  min-height: 100%;
+}
+
+h1 {
+  font-size: var(--h1_small);
+}
+h2 {
+  font-size: var(--h2_small);
+}
+h3 {
+  font-size: var(--h3_small);
+}
+
+@media (min-width: 400px) {
+  h1 {
+    font-size: var(--h1_medium);
+  }
+  h2 {
+    font-size: var(--h2_medium);
+  }
+  h3 {
+    font-size: var(--h3-medium);
+  }
+}
+
+@media (min-width: 700px) {
+  h1 {
+    font-size: var(--h1_large);
+  }
+  h2 {
+    font-size: var(--h2_large);
+  }
+}
+
+.btn-large {
+  padding: 0.5em 1em;
+}
+
+.container {
+  width: 90%;
+  margin: auto;
+}
+
+.px790 {
+  max-width: 790px;
+}
+
+.px1024 {
+  width: 1024px;
+}
+
+.center {
+  margin: auto;
+}
+
+.box {
+  cursor: pointer;
+  border: 2px solid var(--grey-200);
+  padding: 1em 1.5em;
+  border-radius: 4pt;
+  width: 100%;
+  margin-bottom: 1em;
+}
+.previous-lesson,
+.next-lesson,
+.complete {
+  width: fit-content;
+  padding: 0.7em 2.5em;
+  border-radius: 16pt;
+  border: none;
+  outline: none;
+  color: white;
+}
+.complete {
+  background: var(--green-100);
+}
+.previous-lesson,
+.next-lesson {
+  background: var(--dblue);
+}
+
+.nav {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  padding: 1em 0;
+}
+header h1 {
+  cursor: pointer;
+}
+
+.logout,
+.dashboard {
+  border-radius: 4pt;
+  border: none;
+  outline: none;
+}
+.logout {
+  background: var(--blue-100);
+  color: white;
+}
+.dashboard {
+  background: white;
+}
+button {
+  cursor: pointer;
+}
+
+@media (max-width: 600px) {
+  .nav {
+    flex-direction: column;
+    
+    align-items: center;
+  }
+  .nav > * {
+    margin-top: 1em;
+    width: 100%;
+    text-align: center;
+  }
+}

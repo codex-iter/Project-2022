@@ -1,0 +1,107 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <link rel="icon" href="../static/logo.png" type="image/icon type" />
+    <link rel="stylesheet" href="../tasks/tasks.css">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Task 3: ULearn</title>
+</head>
+
+<body>
+    <!-- header -->
+    <%- include('header.ejs') %>
+
+        <h1 class="heading container px790">Lecture: 3- Basics of JavaScript</h1>
+        <h2 class="description container px790" style="font-weight: 500;">
+            JavaScript is a high-level, often just-in-time compiled language that conforms to the ECMAScript
+            standard.
+            <br>
+            It has dynamic typing, prototype-based object-orientation, and first-class functions. It is
+            multi-paradigm, supporting event-driven, functional, and imperative programming styles.
+            <br> <br>
+            It has application programming interfaces (APIs) for working with text, dates, regular expressions, standard data structures,
+            and the Document Object Model (DOM).
+
+
+        </h2>
+        <div class="px790 container">
+            <iframe width="100%" src="https://www.youtube-nocookie.com/embed/PkZNo7MFNFg" title="YouTube video player"
+                frameborder="0"
+                allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture"
+                allowfullscreen id="player"></iframe>
+        </div>
+
+        <div class="container px790 nav">
+            <button class="previous-lesson" onclick="previousLesson()">
+                <h3>Previous Lesson</h3>
+            </button>
+            <% if(user.completed[2]) { %>
+                <a href="/tasks">
+                    <h3>Back to Homepage</h3>
+                </a>
+                <% } else { %>
+                    <button class="complete" onclick="completed()">
+                        <h3>Mark as Complete</h3>
+                    </button>
+                    <% } %>
+
+                        <span style="width: 10px; height: 10px;"></span>
+        </div>
+        <!-- footer -->
+        <%- include('footer.ejs') %>
+
+</body>
+<script>
+    const player = document.getElementById("player");
+
+    window.addEventListener("load", playerSizer);
+    window.addEventListener("resize", playerSizer);
+    function playerSizer() {
+        // console.log(window.outerWidth);
+        var width = player.offsetWidth;
+        // console.log(width);
+        player.height = (width * 0.5625);
+    }
+    function previousLesson() {
+        window.location.href = '/task/2'
+    }
+    async function completed() {
+        await fetch('/task/3', {
+            method: 'put',
+            headers: { 'Content-Type': 'application/json' }
+        })
+        window.location.href = '/tasks'
+    }
+    document.querySelector('header h1').addEventListener('click', () => {
+        window.location.href = '/tasks';
+    })
+</script>
+<style>
+    .heading {
+        margin-top: 1em;
+        margin-bottom: 0.5em;
+    }
+
+    .description {
+        margin-bottom: 2em;
+    }
+    @media (min-height: 1000px) and (max-width: 700px) {
+        footer {
+            position: absolute;
+            bottom: 0;
+            width: 100%;
+        }
+    }
+    @media (min-height: 1350px) and (min-width: 700px) {
+        footer {
+            position: absolute;
+            bottom: 0;
+            width: 100%;
+        }
+    }
+</style>
+
+</html>
