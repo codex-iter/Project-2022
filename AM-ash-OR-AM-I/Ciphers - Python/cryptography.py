@@ -50,4 +50,4 @@ if ch == 1:
 else:
     encrypted_text = input("Enter text to decrypt: ")
     plain_text = encryption.decrypt(encrypted_text)
-    print(plain_text)
+    print("Decrypted text =",plain_text)
