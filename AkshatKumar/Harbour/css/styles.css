@@ -70,6 +70,7 @@ p{
 }
 .icon:hover{
     color: #ff8d79;
+    
 }
 
 
@@ -98,4 +99,11 @@ footer{
 }
 footer p{
     color: #fff;
+}
+.mission{
+    font-size:1.5rem;
+    margin:5% 10%;
+    }
+.mission ul{
+    color: grey;
 }
