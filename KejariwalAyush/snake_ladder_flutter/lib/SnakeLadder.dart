@@ -65,7 +65,7 @@ class _SnakeLadderState extends State<SnakeLadder> {
                         crossAxisAlignment: CrossAxisAlignment.center,
                         children: <Widget>[
                           Icon(
-                            Icons.person,
+                            Icons.account_circle,
                             color: ply1Color,
                           ),
                           Text(
@@ -85,7 +85,7 @@ class _SnakeLadderState extends State<SnakeLadder> {
                             children: <Widget>[
                               Expanded(
                                 child: Icon(
-                                  Icons.person,
+                                  Icons.account_circle,
                                   color: ply1Color,
                                 ),
                               ),
@@ -177,7 +177,9 @@ class _SnakeLadderState extends State<SnakeLadder> {
                                 child: Hero(
                                   tag: ply1 == 100 - index
                                       ? 'ply1'
-                                      : ply2 == 100 - index ? 'ply2' : 'None',
+                                      : ply2 == 100 - index
+                                          ? 'ply2'
+                                          : 'None',
                                   child: ply1 == 100 - index
                                       ? ply1 == ply2
                                           ? Center(
@@ -188,7 +190,7 @@ class _SnakeLadderState extends State<SnakeLadder> {
                                             )
                                           : Center(
                                               child: Icon(
-                                                Icons.person,
+                                                Icons.account_circle,
                                                 color: ply1Color,
                                               ),
                                             )
@@ -202,7 +204,7 @@ class _SnakeLadderState extends State<SnakeLadder> {
                                                 )
                                               : Center(
                                                   child: Icon(
-                                                    Icons.person,
+                                                    Icons.account_circle,
                                                     color: ply2Color,
                                                   ),
                                                 )
@@ -226,7 +228,7 @@ class _SnakeLadderState extends State<SnakeLadder> {
                         crossAxisAlignment: CrossAxisAlignment.center,
                         children: <Widget>[
                           Icon(
-                            Icons.person,
+                            Icons.account_circle,
                             color: ply2Color,
                           ),
                           Text(
@@ -285,7 +287,9 @@ class _SnakeLadderState extends State<SnakeLadder> {
               print(randomNo);
               toAnimate = false;
               ply2 == 0
-                  ? randomNo == 1 ? ply2 = order(randomNo) : ply2 = 0
+                  ? randomNo == 1
+                      ? ply2 = order(randomNo)
+                      : ply2 = 0
                   : ply2 + randomNo > 100
                       ? ply2 = ply2
                       : ply2 = order(order(ply2) + randomNo);
@@ -341,7 +345,9 @@ class _SnakeLadderState extends State<SnakeLadder> {
                     print(randomNo);
                     toAnimate = false;
                     ply1 == 0
-                        ? randomNo == 1 ? ply1 = order(randomNo) : ply1 = 0
+                        ? randomNo == 1
+                            ? ply1 = order(randomNo)
+                            : ply1 = 0
                         : ply1 + randomNo > 100
                             ? ply1 = ply1
                             : ply1 = order(order(ply1) + randomNo);
@@ -399,7 +405,7 @@ class _SnakeLadderState extends State<SnakeLadder> {
           children: <Widget>[
             Expanded(
               child: Icon(
-                Icons.person,
+                Icons.account_circle,
                 color: ply2Color,
               ),
             ),
@@ -431,7 +437,9 @@ class _SnakeLadderState extends State<SnakeLadder> {
               print(randomNo);
               toAnimate = false;
               ply1 == 0
-                  ? randomNo == 1 ? ply1 = order(randomNo) : ply1 = 0
+                  ? randomNo == 1
+                      ? ply1 = order(randomNo)
+                      : ply1 = 0
                   : ply1 + randomNo > 100
                       ? ply1 = ply1
                       : ply1 = order(order(ply1) + randomNo);
@@ -486,7 +494,7 @@ class _SnakeLadderState extends State<SnakeLadder> {
           children: <Widget>[
             Expanded(
               child: Icon(
-                Icons.person,
+                Icons.account_circle,
                 color: ply1Color,
               ),
             ),
