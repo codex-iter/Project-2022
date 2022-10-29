@@ -1,0 +1,73 @@
+
+body {
+
+    font-family: 'Space Mono', monospace;
+    background-image: url(https://images6.alphacoders.com/666/666446.jpg);
+    background-size: 1920px 1080px;
+    color: aliceblue;
+}
+
+.header {
+    margin: 1rem;
+    padding: 1rem;
+    text-align: center;
+    color: white;
+}
+
+.header1 {
+    display: inline;
+}
+body {
+
+    font-family: 'Space Mono', monospace;
+    background-image: url(https://images6.alphacoders.com/666/666446.jpg);
+    background-size: 1920px 1080px;
+    color: aliceblue;
+}
+
+.header {
+    margin: 1rem;
+    padding: 1rem;
+    text-align: center;
+    color: white;
+}
+
+.header1 {
+    display: inline;
+}
+
+.header2 {
+    font-size: 18px;
+    display: inline;
+    padding-left: 0.5rem;
+} 
+
+.every{
+    margin: 1rem;
+    padding: 1rem;
+    text-align: center;
+    display: flex;
+    justify-content: center;
+
+}
+.earth{
+    margin-right: 2rem;
+}
+.mars{
+    margin-left: 2rem;
+}
+
+.header2 {
+    font-size: 18px;
+    display: inline;
+    padding-left: 0.5rem;
+} 
+
+.earth {
+    display: inline-block;
+}
+
+.mars {
+
+    display: inline-block;
+}
