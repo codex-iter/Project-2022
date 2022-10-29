@@ -1,0 +1,30 @@
+
+.container{
+    text-align: center;
+    margin: auto;
+}
+.dice{
+    text-align: center;
+    display: inline-block;
+}
+body{
+    background-color: rgb(202, 201, 201);
+}
+h1{
+    font-size: 5rem;
+    font-family:  cursive;
+    color: #44b18d;
+}
+footer{
+    color: #EEEEEE;
+    margin-top: 5%;
+    font-style: italic;
+    text-align: center;
+}
+p{
+    color: #3d3fad;
+}
+img{
+    width: 60%;;
+}
+
