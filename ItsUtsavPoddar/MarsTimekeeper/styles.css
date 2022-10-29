@@ -1,0 +1,25 @@
+
+body {
+
+    font-family: 'Space Mono', monospace;
+    background-image: url(https://images6.alphacoders.com/666/666446.jpg);
+    background-size: 1920px 1080px;
+    color: aliceblue;
+}
+
+.header {
+    margin: 1rem;
+    padding: 1rem;
+    text-align: center;
+    color: white;
+}
+
+.header1 {
+    display: inline;
+}
+
+.header2 {
+    font-size: 18px;
+    display: inline;
+    padding-left: 0.5rem;
+} 

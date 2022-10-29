@@ -4,12 +4,35 @@
     <meta charset="UTF-8">
     <meta http-equiv="X-UA-Compatible" content="IE=edge">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Mars Clock</title>
-</head>
-<body>
-    <h1>Mars Clock</h1>
-    
 
-    <h2> WORKING ON THE PROJECT (INITIAL COMMIT)</h2>
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Space+Mono:ital@0;1&display=swap" rel="stylesheet">
+
+
+    <link rel="stylesheet" href="styles.css" />
+   
+
+    <title>Martian Time</title>
+</head>
+<body class="k" onload="f()">
+    
+    <div class="header">
+        <h1 class="header1">Martian Clock</h1>
+        <p class="header2">by Utsav Poddar</p>
+    </div>
+
+    <p style="font-size: 16px;text-align: center;"> This is a live calculation of the time on Mars. </p>
+
+    <p style="text-align: center;padding: 0.5rem; font-size:30px ;"> Earth </p>
+
+    <div style="text-align: center; ">
+        
+        <p id="earthTime"></p>
+        <p style="font-size: 13px" id="localTime"></p>
+        <p style="padding-top:1rem ;"> <strong>Millis</strong> = <span id="millis"></span></p>
+    </div>
+
+    <script src="script.js"></script>
 </body>
 </html>
