@@ -1,3 +1,3 @@
 ## A web app, which will display the current time on mars.
 
-##  WORKING ON THE PROJECT (INITIAL COMMIT)
+# I used simple mathematics to calculate the time on mars. 
