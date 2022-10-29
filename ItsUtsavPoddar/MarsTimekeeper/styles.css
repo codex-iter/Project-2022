@@ -23,3 +23,12 @@ body {
     display: inline;
     padding-left: 0.5rem;
 } 
+
+.earth {
+    display: inline-block;
+}
+
+.mars {
+
+    display: inline-block;
+}
